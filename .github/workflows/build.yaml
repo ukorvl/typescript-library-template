@@ -1,0 +1,41 @@
+name: Build
+
+on:
+  pull_request:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: ${{ github.event_name == 'pull_request' && 0 || 1 }}
+
+      # Uncomment the following steps to enable the build process
+
+      # - name: Install dependencies
+      #   uses: ./.github/actions/install
+
+      # - name: Lint
+      #   uses: ./.github/actions/lint
+      #   with:
+      #     check-commits: ${{ github.event_name == 'pull_request' }}
+
+      # - name: Build app
+      #   uses: ./.github/actions/build
+
+      # - name: Test
+      #   uses: ./.github/actions/test
+      #   with:
+      #     upload-coverage: ${{ github.event_name == 'push' }}
+      #     github-token: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,35 @@
+name: "Lint"
+description: "Lint the code in the repo, check for unused files, dependencies, and exports"
+
+inputs:
+  check-commits:
+    description: "Check if the commits follow the conventional commits specification"
+    required: false
+    type: "boolean"
+    default: false
+
+runs:
+  using: "composite"
+  steps:
+    - name: Lint
+      run: npm run lint
+      shell: bash
+
+    - name: Format
+      run: npm run format
+      shell: bash
+
+    - name: Check for unused files, dependencies, and exports
+      run: npm run knip
+      shell: bash
+
+    - name: Lint commits
+      if: ${{ inputs.check-commits == 'true' }}
+      run: npm run check:commits
+      shell: bash
+
+    - name: Check lib exports
+      run: |
+        cd lib
+        npm run check:exports
+      shell: bash
