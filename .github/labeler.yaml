@@ -2,38 +2,38 @@
 
 ci:
   - changed_files:
-    - any-glob-to-any-file:
-      - .github/workflows/**
-      - .github/actions/**
-      - .github/labeler.yaml
-      - .github/labels.yaml
+      - any-glob-to-any-file:
+          - .github/workflows/**
+          - .github/actions/**
+          - .github/labeler.yaml
+          - .github/labels.yaml
 
 documentation:
   - changed_files:
-    - any-glob-to-any-file:
-      - '**/README.md'
-      - 'docs/**'
+      - any-glob-to-any-file:
+          - "**/README.md"
+          - "docs/**"
 
 tests:
   - changed_files:
-    - any-glob-to-any-file:
-      - '**/*.test.ts'
-      - '**/*.spec.ts'
-      - '**/*.test.tsx'
-      - '**/*.spec.tsx'
+      - any-glob-to-any-file:
+          - "**/*.test.ts"
+          - "**/*.spec.ts"
+          - "**/*.test.tsx"
+          - "**/*.spec.tsx"
 
-examples:
+example:
   - changed_files:
-    - any-glob-to-any-file:
-      - 'examples/**'
+      - any-glob-to-any-file:
+          - "example/**"
 
 dependencies:
   - changed_files:
-    - any-glob-to-any-file:
-      - '**/package.json'
-      - 'package-lock.json'
+      - any-glob-to-any-file:
+          - "**/package.json"
+          - "package-lock.json"
 
 core:
   - changed_files:
-    - any-glob-to-any-file:
-      - 'lib/src/**'
+      - any-glob-to-any-file:
+          - "lib/src/**"

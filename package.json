@@ -1,34 +1,30 @@
 {
   "name": "fill-me-monorepo",
   "version": "0.0.1",
-  "description": "fill-me",
-  "main": "fill-me",
   "private": true,
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "install-git-hooks": "npx --no-install simple-git-hooks",
-    "prepare": "npm run install-git-hooks"
-  },
-  "author": "ukorvl <ukorotovskiy@gmail.com>",
-  "directories": {
-    "example": "example",
-    "lib": "lib",
-    "doc": "docs"
-  },
-  "engines": {
-    "node": ">=22.0.0",
-    "npm": ">=10.0.0"
-  },
+  "description": "fill-me",
   "license": "MIT",
-  "devDependencies": {
-    "@commitlint/cli": "^19.8.0",
-    "@commitlint/config-conventional": "^19.8.0",
-    "@commitlint/format": "^19.8.0",
-    "concurrently": "^9.2.0",
-    "knip": "^5.61.2",
-    "prettier": "^3.6.2",
-    "simple-git-hooks": "^2.13.0",
-    "typescript": "^5"
+  "author": "ukorvl <ukorotovskiy@gmail.com>",
+  "main": "fill-me",
+  "directories": {
+    "lib": "lib",
+    "doc": "docs",
+    "example": "example"
+  },
+  "workspaces": [
+    "lib",
+    "example",
+    "docs"
+  ],
+  "scripts": {
+    "format": "prettier --write \"**/*.{js,ts,jsx,tsx,json,md,yaml,yml}\"",
+    "format:check": "prettier --check \"**/* .{js,ts,jsx,tsx,json,md,yaml,yml}\"",
+    "install-git-hooks": "npx --no-install simple-git-hooks",
+    "knip": "knip --production",
+    "lint": "",
+    "lint:fix": "",
+    "prepare": "npm run install-git-hooks",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "simple-git-hooks": {
     "commit-msg": "npx --no-install commitlint --edit $1",
@@ -36,12 +32,31 @@
       "commit-msg"
     ]
   },
-  "dependencies": {
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "@commitlint/format": "^19.8.0",
+    "concurrently": "^9.2.0",
+    "knip": "^5.61.2",
+    "prettier": "^3.6.2",
+    "prettier-plugin-multiline-arrays": "^4.0.3",
+    "prettier-plugin-packagejson": "^2.5.15",
+    "prettier-plugin-sort-json": "^4.1.1",
+    "simple-git-hooks": "^2.13.0",
+    "typescript": "^5",
+    "vite": "^7.0.0",
+    "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.2.4"
   },
-  "workspaces": [
-    "lib",
-    "example",
-    "docs"
-  ]
+  "engines": {
+    "node": ">=22.0.0",
+    "npm": ">=10.0.0"
+  },
+  "knip": {
+    "ignore": [],
+    "ignoreBinaries": [
+      "commitlint",
+      "commit-msg"
+    ]
+  }
 }

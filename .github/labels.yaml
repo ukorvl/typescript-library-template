@@ -10,7 +10,7 @@
   description: "Changes to test files"
   color: "ffd300"
 
-- name: examples
+- name: example
   description: "Changes to example files"
   color: "6f42c1"
 

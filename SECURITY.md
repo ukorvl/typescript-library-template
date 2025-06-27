@@ -13,9 +13,4 @@ Thank you for helping keep this project and its users safe!
 
 ## Supported Versions
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 1.x     | :white_check_mark:                |
-| < 1.0   | :x:                |
-
-Unsupported versions are not actively maintained and may contain known vulnerabilities.
+fill-me

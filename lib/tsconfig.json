@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "composite": true,
+    "paths": {
+      "@lib": ["./src"],
+      "@lib/*": ["./src/*"]
+    },
+    "moduleResolution": "bundler",
+    "module": "esnext",
+  },
+  "extends": "../tsconfig.json"
+}

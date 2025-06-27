@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "nodenext",
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "es2015",
+    "moduleResolution": "nodenext",
+  },
+  "exclude": ["node_modules"],
+  "references": [
+    { "path": "lib" },
+    { "path": "docs" },
+    { "path": "example" }]
+}
