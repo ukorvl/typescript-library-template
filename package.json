@@ -9,7 +9,7 @@
     "install-git-hooks": "npx --no-install simple-git-hooks",
     "prepare": "npm run install-git-hooks"
   },
-  "author": "",
+  "author": "ukorvl <ukorotovskiy@gmail.com>",
   "directories": {
     "example": "example",
     "lib": "lib",
@@ -27,12 +27,21 @@
     "concurrently": "^9.2.0",
     "knip": "^5.61.2",
     "prettier": "^3.6.2",
-    "simple-git-hooks": "^2.13.0"
+    "simple-git-hooks": "^2.13.0",
+    "typescript": "^5"
   },
-    "simple-git-hooks": {
+  "simple-git-hooks": {
     "commit-msg": "npx --no-install commitlint --edit $1",
     "preserveUnused": [
       "commit-msg"
     ]
-  }
+  },
+  "dependencies": {
+    "vitest": "^3.2.4"
+  },
+  "workspaces": [
+    "lib",
+    "example",
+    "docs"
+  ]
 }

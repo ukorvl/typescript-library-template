@@ -12,8 +12,6 @@ A clear and concise description of what the bug is.
 **Environment**
 - Node version: [e.g. 14.17.0] and package manager
 - Browser: [e.g. Chrome, Safari] and version
-- React version: [e.g. 19.0.0]
-- lightweight-charts-react-components version: [e.g. 1.0.0]
 
 **To Reproduce**
 Steps to reproduce the behavior:
