@@ -1,25 +1,45 @@
+# This file is used by actions/labeler to automaticanyy label pull requests.
+
 ci:
-  - .github/workflows/**
-  - .github/actions/**
-  - .github/labeler.yaml
-  - .github/labels.yaml
+  - any:
+      - changed_files:
+          - AnyGlobToAnyFile:
+              - .github/workflows/**
+              - .github/actions/**
+              - .github/labeler.yaml
+              - .github/labels.yaml
 
 documentation:
-  - "**/README.md"
-  - "docs/**"
+  - any:
+      - changed_files:
+          - AnyGlobToAnyFile:
+              - "**/README.md"
+              - "docs/**"
 
 tests:
-  - "**/*.test.ts"
-  - "**/*.spec.ts"
-  - "**/*.test.tsx"
-  - "**/*.spec.tsx"
+  - any:
+      - changed_files:
+          - AnyGlobToAnyFile:
+              - "**/*.test.ts"
+              - "**/*.spec.ts"
+              - "**/*.test.tsx"
+              - "**/*.spec.tsx"
 
 example:
-  - "example/**"
+  - any:
+      - changed_files:
+          - AnyGlobToAnyFile:
+              - "example/**"
 
 dependencies:
-  - "**/package.json"
-  - "package-lock.json"
+  - any:
+      - changed_files:
+          - AnyGlobToAnyFile:
+              - "**/package.json"
+              - "package-lock.json"
 
 core:
-  - "lib/src/**"
+  - any:
+      - changed_files:
+          - AnyGlobToAnyFile:
+              - "lib/src/**"
