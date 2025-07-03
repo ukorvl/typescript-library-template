@@ -1,7 +1,7 @@
-# This file is used by actions/labeler to automatically label pull requests.
+# This file is used by actions/labeler to automaticanyy label pull requests.
 
 ci:
-  - all:
+  - any:
       - changed_files:
           - AnyGlobToAnyFile:
               - .github/workflows/**
@@ -39,7 +39,7 @@ dependencies:
               - "package-lock.json"
 
 core:
-  - all:
+  - any:
       - changed_files:
           - AnyGlobToAnyFile:
               - "lib/src/**"
