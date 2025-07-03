@@ -25,11 +25,11 @@ runs:
 
     - name: Lint commits
       if: ${{ inputs.check-commits == 'true' }}
-      run: npm run check:commits
+      run: npm run lint:commits
       shell: bash
 
     - name: Check lib exports
       run: |
         cd lib
-        npm run check:exports
+        npm run lint:exports
       shell: bash
