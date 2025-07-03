@@ -45,7 +45,7 @@
     "prettier-plugin-sort-json": "^4.1.1",
     "simple-git-hooks": "^2.13.0",
     "typescript": "^5",
-    "vite": "^7.0.0",
+    "vite": "^7.0.1",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.2.4"
   },
