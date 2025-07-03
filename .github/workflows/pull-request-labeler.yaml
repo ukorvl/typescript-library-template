@@ -1,7 +1,15 @@
 name: Label Pull Requests
 
 on:
-  - pull_request_target
+  pull_request_target:
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
 
 jobs:
   label-pr:
@@ -13,5 +21,4 @@ jobs:
       - name: Add Labels for PR
         uses: actions/labeler@v5
         with:
-          repo-token: "${{ secrets.GITHUB_TOKEN }}"
           configuration-path: ".github/labeler.yaml"

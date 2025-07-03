@@ -1,45 +1,46 @@
 # This file is used by actions/labeler to automaticanyy label pull requests.
 
 ci:
-  - any:
-      - changed_files:
-          - AnyGlobToAnyFile:
-              - .github/workflows/**
-              - .github/actions/**
-              - .github/labeler.yaml
-              - .github/labels.yaml
+  - changed-files:
+      - any-glob-to-any-file:
+          - ".github/workflows/**"
+          - ".github/actions/**"
+          - ".github/labeler.yaml"
+          - ".github/labels.yaml"
 
 documentation:
-  - any:
-      - changed_files:
-          - AnyGlobToAnyFile:
-              - "**/README.md"
-              - "docs/**"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "docs/**"
+          - "**/README.md"
+          - "**/CHANGELOG.md"
 
 tests:
-  - any:
-      - changed_files:
-          - AnyGlobToAnyFile:
-              - "**/*.test.ts"
-              - "**/*.spec.ts"
-              - "**/*.test.tsx"
-              - "**/*.spec.tsx"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/tests/**"
+          - "**/test/**"
+          - "**/spec/**"
+          - "**/specs/**"
+          - "**/test.ts"
+          - "**/spec.ts"
+          - "**/test.tsx"
+          - "**/spec.tsx"
 
 example:
-  - any:
-      - changed_files:
-          - AnyGlobToAnyFile:
-              - "example/**"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "example/**"
 
 dependencies:
-  - any:
-      - changed_files:
-          - AnyGlobToAnyFile:
-              - "**/package.json"
-              - "package-lock.json"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/package.json"
+          - "**/package-lock.json"
+          - "**/yarn.lock"
+          - "**/pnpm-lock.yaml"
 
 core:
-  - any:
-      - changed_files:
-          - AnyGlobToAnyFile:
-              - "lib/src/**"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "lib/src/**"
