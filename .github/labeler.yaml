@@ -1,39 +1,25 @@
-# This file is used by actions/labeler to automatically label pull requests.
-
 ci:
-  - changed_files:
-      - any-glob-to-any-file:
-          - .github/workflows/**
-          - .github/actions/**
-          - .github/labeler.yaml
-          - .github/labels.yaml
+  - .github/workflows/**
+  - .github/actions/**
+  - .github/labeler.yaml
+  - .github/labels.yaml
 
 documentation:
-  - changed_files:
-      - any-glob-to-any-file:
-          - "**/README.md"
-          - "docs/**"
+  - "**/README.md"
+  - "docs/**"
 
 tests:
-  - changed_files:
-      - any-glob-to-any-file:
-          - "**/*.test.ts"
-          - "**/*.spec.ts"
-          - "**/*.test.tsx"
-          - "**/*.spec.tsx"
+  - "**/*.test.ts"
+  - "**/*.spec.ts"
+  - "**/*.test.tsx"
+  - "**/*.spec.tsx"
 
 example:
-  - changed_files:
-      - any-glob-to-any-file:
-          - "example/**"
+  - "example/**"
 
 dependencies:
-  - changed_files:
-      - any-glob-to-any-file:
-          - "**/package.json"
-          - "package-lock.json"
+  - "**/package.json"
+  - "package-lock.json"
 
 core:
-  - changed_files:
-      - any-glob-to-any-file:
-          - "lib/src/**"
+  - "lib/src/**"
