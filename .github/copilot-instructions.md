@@ -23,3 +23,13 @@ For more information, refer to the [docs](https://docs.github.com/en/copilot/how
 - Write maintainable, self-documenting code
 - Follow security best practices
 - Ensure proper type coverage
+
+## Bash commands
+- Use `npm run format` to format the code.
+- Use `npm run format:check` to check code formatting.
+- Use `npm run lint` to check code style.
+- Use `npm run lint:fix` to automatically fix linting issues.
+- Use `npm run lint:commits` to check commit messages.
+- Use `npm run knip` to analyze exports.
+- Use `npm run test` to run tests.
+- Use `npm run ci` to install dependencies.
