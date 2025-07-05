@@ -1,14 +1,14 @@
 {
   "name": "fill-me-docs",
   "version": "0.0.1",
-  "description": "fill-me",
   "private": true,
+  "description": "fill-me",
   "keywords": [],
+  "license": "MIT",
   "author": "ukorvl <ukorotovskiy@gmail.com>",
   "type": "",
   "main": "",
   "module": "",
-  "license": "MIT",
   "scripts": {
     "build": "",
     "dev": ""

@@ -8,16 +8,24 @@ This repository is organized as a monorepo using **npm workspaces**. The major f
 - `example/` — Example usage of the library.
 - `docs/` — Documentation files.
 - `.github/` — GitHub Actions, issue templates, and labels.
+- `.vscode/` — VSCode settings for the project.
+- `scripts/` — Custom scripts for different development tasks.
 
 ## Packages
 
 ### lib/
+
 The core of the library. It includes:
 
 fill-me
 
 ### example/
+
 A sample project that demonstrates how to consume the library. Useful for testing integration during development.
+
+### docs/
+
+Contains documentation files.
 
 ## Tooling
 

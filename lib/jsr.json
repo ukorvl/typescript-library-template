@@ -1,0 +1,24 @@
+{
+  "exports": "",
+  "imports": {
+    "@/": "./src/"
+  },
+  "license": "MIT",
+  "name": "fill-me",
+  "publish": {
+    "exclude": [
+      "**/*.test.tsx",
+      "**/*.test.ts",
+      "**/*.spec.tsx",
+      "**/*.spec.ts"
+    ],
+    "include": [
+      "LICENSE",
+      "README.md",
+      "src/**/*.tsx",
+      "src/**/*.ts"
+    ]
+  },
+  "version": "0.0.1",
+  "$schema": "https://jsr.io/schema/config-file.v1.json"
+}

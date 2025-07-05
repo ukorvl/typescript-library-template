@@ -36,7 +36,7 @@
   "scripts": {
     "build": "",
     "dev": "",
-    "lint:exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm"
+    "lint:exports": "attw --pack ."
   },
   "dependencies": {},
   "devDependencies": {

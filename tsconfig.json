@@ -5,12 +5,18 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "module": "nodenext",
+    "moduleResolution": "nodenext",
     "skipLibCheck": true,
     "strict": true,
-    "target": "es2015",
-    "moduleResolution": "nodenext",
+    "target": "es2015"
   },
-  "exclude": ["node_modules"],
+  "exclude": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/coverage/**",
+    "eslint.config.mjs"
+  ],
   "references": [
     { "path": "lib" },
     { "path": "docs" },
