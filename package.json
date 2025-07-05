@@ -5,27 +5,28 @@
   "description": "fill-me",
   "license": "MIT",
   "author": "ukorvl <ukorotovskiy@gmail.com>",
-  "main": "fill-me",
   "directories": {
     "lib": "lib",
     "doc": "docs",
     "example": "example"
   },
   "workspaces": [
-    "lib",
+    "docs",
     "example",
-    "docs"
+    "lib"
   ],
   "scripts": {
-    "format": "prettier --write \"**/*.{js,ts,jsx,tsx,json,md,yaml,yml}\"",
-    "format:check": "prettier --check \"**/* .{js,ts,jsx,tsx,json,md,yaml,yml}\"",
+    "dev": "concurrently \"npm run dev:lib\" \"npm run dev:docs\" \"npm run dev:example\" --kill-others --success last",
+    "format": "prettier --check \"**/*.{js,ts,jsx,tsx,json,md,yaml,yml}\"",
+    "format:fix": "prettier --write \"**/*.{js,ts,jsx,tsx,json,md,yaml,yml}\"",
     "install-git-hooks": "npx --no-install simple-git-hooks",
     "knip": "knip --production",
-    "lint": "",
-    "lint:fix": "",
+    "lint": "eslint --cache --ext .ts,.tsx,.js,.jsx .",
+    "lint:commits": "bash -c \"npx --no-install commitlint --from=HEAD~1\"",
+    "lint:fix": "eslint --cache --fix --ext .ts,.tsx,.js,.jsx .",
     "prepare": "npm run install-git-hooks",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint:commits": "bash -c \"npx --no-install commitlint --from=HEAD~1\""
+    "version": "bash ./scripts/version.sh"
   },
   "simple-git-hooks": {
     "commit-msg": "npx --no-install commitlint --edit $1",
@@ -33,11 +34,22 @@
       "commit-msg"
     ]
   },
+  "overrides": {
+    "eslint": "^9.30.1"
+  },
   "devDependencies": {
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
     "@commitlint/format": "^19.8.0",
+    "@eslint/js": "^9.30.1",
+    "@types/node": "^22.16.0",
     "concurrently": "^9.2.0",
+    "eslint": "^9.30.1",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jsdoc": "^51.3.3",
+    "eslint-plugin-vitest": "^0.5.4",
+    "globals": "^16.3.0",
     "knip": "^5.61.3",
     "prettier": "^3.6.2",
     "prettier-plugin-multiline-arrays": "^4.0.3",
@@ -45,6 +57,7 @@
     "prettier-plugin-sort-json": "^4.1.1",
     "simple-git-hooks": "^2.13.0",
     "typescript": "^5",
+    "typescript-eslint": "^8.35.1",
     "vite": "^7.0.0",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.2.4"

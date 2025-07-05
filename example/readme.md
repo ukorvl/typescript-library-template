@@ -5,4 +5,3 @@
     It is supposed to demonstrate how to use the project created with the template.
   </p>
 </div>
-

@@ -57,11 +57,11 @@ Thank you for your interest in contributing to **fill-me**! We appreciate your h
    git commit -m "feat: Add new feature"
    ```
    Note, that we use commitlint to enforce conventional commit messages.
-3. **Push to Your Fork**:
+2. **Push to Your Fork**:
    ```sh
    git push origin feature/my-new-feature
    ```
-4. **Open a Pull Request**:
+3. **Open a Pull Request**:
    - Go to the original repository.
    - Click "New Pull Request".
    - Select your branch and submit the PR with a clear description.

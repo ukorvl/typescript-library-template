@@ -25,8 +25,9 @@ For more information, refer to the [docs](https://docs.github.com/en/copilot/how
 - Ensure proper type coverage
 
 ## Bash commands
-- Use `npm run format` to format the code.
-- Use `npm run format:check` to check code formatting.
+
+- Use `npm run format:fix` to format the code.
+- Use `npm run format` to check code formatting.
 - Use `npm run lint` to check code style.
 - Use `npm run lint:fix` to automatically fix linting issues.
 - Use `npm run lint:commits` to check commit messages.
