@@ -13,6 +13,7 @@ export default [
       "**/dist",
       "**/coverage/",
       "**/build/",
+      "commitlint.config.ts"
     ],
   },
   {
@@ -24,9 +25,12 @@ export default [
     },
   },
   pluginJs.configs.recommended,
+  ...tseslint.configs.recommendedTypeChecked.map((config) => ({
+    ...config,
+    files: ["**/*.ts", "**/*.tsx"],
+  })),
   {
     files: ["**/*.ts", "**/*.tsx"],
-    ...tseslint.configs.recommendedTypeChecked,
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {

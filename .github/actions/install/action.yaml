@@ -24,5 +24,5 @@ runs:
           ${{ runner.os }}-node-
 
     - name: Install dependencies
-      run: npm ci --ignore-scripts
+      run: npm ci --ignore-scriptsc --audit=false
       shell: bash

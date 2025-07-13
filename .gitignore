@@ -21,6 +21,7 @@ build/
 *.swp
 *.swo
 *.DS_Store
+.eslintcache
 
 # Testing
 coverage/
