@@ -9,5 +9,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "extends": "../tsconfig.json"
+  "extends": "../tsconfig.json",
+  "include": ["src", "**.ts", "**.tsx"]
 }

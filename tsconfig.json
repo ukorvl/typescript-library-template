@@ -6,6 +6,7 @@
     "forceConsistentCasingInFileNames": true,
     "module": "nodenext",
     "moduleResolution": "nodenext",
+    "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
     "target": "es2015"
