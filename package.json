@@ -56,7 +56,7 @@
     "prettier-plugin-multiline-arrays": "^4.0.3",
     "prettier-plugin-packagejson": "^2.5.17",
     "prettier-plugin-sort-json": "^4.1.1",
-    "simple-git-hooks": "^2.13.0",
+    "simple-git-hooks": "^2.13.1",
     "size-limit": "^11.2.0",
     "typescript": "^5",
     "typescript-eslint": "^8.35.1",
