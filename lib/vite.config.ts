@@ -20,7 +20,10 @@ const banner = `
 export default defineConfig(() => {
   const plugins = [
     tsconfigPaths(),
-    dts({ rollupTypes: true, insertTypesEntry: true }),
+    dts({
+      rollupTypes: true,
+      insertTypesEntry: true,
+    }),
   ];
 
   return {

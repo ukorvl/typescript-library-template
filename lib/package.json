@@ -21,13 +21,13 @@
     ".": {
       "import": {
         "types": "./dist/index.d.ts",
-        "default": "./dist/index.mjs"
+        "default": "./dist/fill-me.mjs"
       }
     }
   },
-  "main": "dist/index.mjs",
-  "unpkg": "dist/index.umd.js",
-  "module": "dist/index.mjs",
+  "main": "dist/fill-me.mjs",
+  "unpkg": "dist/fill-me.umd.js",
+  "module": "dist/fill-me.mjs",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
