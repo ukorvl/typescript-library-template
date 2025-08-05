@@ -9,6 +9,7 @@ updates:
       include: "scope"
     labels:
       - "dependencies"
+    rebase-strategy: "auto"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -18,3 +19,4 @@ updates:
       include: "scope"
     labels:
       - "dependencies"
+    rebase-strategy: "auto"
