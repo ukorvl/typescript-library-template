@@ -40,7 +40,12 @@
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.18.2",
-    "vite-plugin-dts": "^4.5.4"
+    "@vitest/coverage-v8": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vite-plugin-dts": "^4.5.4",
+    "vite-tsconfig-paths": "catalog:",
+    "vitest": "catalog:"
   },
   "peerDependenciesMeta": {},
   "publishConfig": {

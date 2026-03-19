@@ -37,3 +37,28 @@ jobs:
         with:
           upload-coverage: ${{ github.event_name == 'push' }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
+
+  typescript-readiness:
+    name: TypeScript Readiness (${{ matrix.typescript-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        typescript-version:
+          - latest
+          - rc
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: ${{ github.event_name == 'pull_request' && 0 || 1 }}
+
+      - name: Install dependencies
+        uses: ./.github/actions/install
+
+      - name: Typecheck with TypeScript ${{ matrix.typescript-version }}
+        run: |
+          pnpm --package=typescript@${{ matrix.typescript-version }} dlx tsc --noEmit --project lib/tsconfig.json
+          pnpm --package=typescript@${{ matrix.typescript-version }} dlx tsc --noEmit --project docs/tsconfig.json
+          pnpm --package=typescript@${{ matrix.typescript-version }} dlx tsc --noEmit --project example/tsconfig.json
+        shell: bash
