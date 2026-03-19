@@ -1,10 +1,10 @@
 {
-  "name": "fill-me-monorepo",
+  "name": "typescript-library-template-monorepo",
   "version": "0.0.1",
   "private": true,
-  "description": "fill-me",
+  "description": "Template monorepo for building and publishing a TypeScript library",
   "license": "MIT",
-  "author": "fill-me <fill-me@fill-me.com>",
+  "author": "Template Maintainers <maintainers@example.com>",
   "directories": {
     "lib": "lib",
     "doc": "docs",
@@ -12,7 +12,7 @@
   },
   "scripts": {
     "build": "echo \"no build specified\" && exit 0",
-    "dev": "concurrently \"pnpm -C lib dev\" \"pnpm -C docs dev\" \"pnpm -C example dev\" --kill-others --success last",
+    "dev": "pnpm -r --parallel --stream --filter ./lib --filter ./docs --filter ./example run dev",
     "format": "prettier --check \"**/*.{js,ts,jsx,tsx,json,md,yaml,yml}\"",
     "format:fix": "prettier --write \"**/*.{js,ts,jsx,tsx,json,md,yaml,yml}\"",
     "install-git-hooks": "pnpm exec simple-git-hooks",
@@ -22,7 +22,8 @@
     "lint:fix": "eslint --cache --fix --ext .ts,.tsx,.js,.jsx,.mjs,.cjs .",
     "lint-staged": "lint-staged",
     "prepare": "pnpm run install-git-hooks",
-    "test": "echo \"no test specified\" && exit 0",
+    "test": "pnpm -r --if-present run test",
+    "typecheck": "pnpm -r --if-present run typecheck",
     "version": "bash ./scripts/version.sh"
   },
   "simple-git-hooks": {
@@ -50,7 +51,7 @@
     "@eslint/js": "^9.39.4",
     "@size-limit/preset-small-lib": "^12.0.0",
     "@types/node": "^24.6.2",
-    "concurrently": "^9.2.1",
+    "@vitest/coverage-v8": "^4.0.17",
     "eslint": "^9.30.1",
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import": "^2.32.0",

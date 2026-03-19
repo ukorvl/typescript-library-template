@@ -1,3 +1,5 @@
+**Template notice:** This repository is a starter template. Replace package metadata (names, URLs, emails, and publish settings) before your first release.
+
 <div align="center">
   <h1>typescript-library-template</h1>
   <p>
@@ -43,7 +45,7 @@ cd your-new-repo
 pnpm install
 ```
 
-The code contains `fill-me` placeholders that you should replace with your own library name and description. This will help you quickly set up your project with the correct branding and information.
+This template intentionally uses generic placeholder metadata and repository links. Update them to your organization values before publishing.
 
 ## License
 

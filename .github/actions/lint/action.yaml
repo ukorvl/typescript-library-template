@@ -14,6 +14,10 @@ runs:
       run: pnpm run lint
       shell: bash
 
+    - name: Typecheck
+      run: pnpm run typecheck
+      shell: bash
+
     - name: Format
       run: pnpm run format
       shell: bash

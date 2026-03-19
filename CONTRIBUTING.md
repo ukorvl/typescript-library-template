@@ -1,14 +1,14 @@
-# Contributing to fill-me
+# Contributing to This Template
 
-Thank you for your interest in contributing to **fill-me**! We appreciate your help in improving and maintaining this project.
+Thank you for your interest in contributing to this template. We appreciate your help in improving and maintaining this project.
 
 ## Getting Started
 
 1. **Fork the Repository**: Click the "Fork" button at the top right of the repository page and clone your fork.
 
    ```sh
-   git clone fill-me
-   cd fill-me
+   git clone https://github.com/your-org/typescript-library-template.git
+   cd typescript-library-template
    ```
 
 2. **Install Dependencies**: Ensure you have Node.js and pnpm installed, then run:
@@ -44,9 +44,10 @@ Thank you for your interest in contributing to **fill-me**! We appreciate your h
 ### Code Guidelines
 
 - Follow the existing code style and conventions.
-- Ensure your changes pass ESLint, Prettier and TypeScript checks:
+- Ensure your changes pass ESLint, Prettier, and TypeScript checks:
   ```sh
   pnpm run lint
+  pnpm run typecheck
   ```
 - Keep PRs focused and provide clear descriptions.
 
@@ -72,6 +73,6 @@ Thank you for your interest in contributing to **fill-me**! We appreciate your h
 
 ## License
 
-By contributing, you agree that your code will be licensed under the [MIT License](fill-me).
+By contributing, you agree that your code will be licensed under the [MIT License](./lib/LICENSE).
 
 Thank you for your contributions! 🎉
