@@ -35,13 +35,16 @@
     "build": "vite build",
     "dev": "vite build --watch",
     "lint:exports": "npm_config_cache=.npm-cache attw --pack . --ignore-rules=cjs-resolves-to-esm",
+    "publint": "publint --strict",
     "test": "vitest run --config vitest.config.ts --coverage",
-    "typecheck": "tsc --noEmit --project tsconfig.json"
+    "typecheck": "tsc --noEmit --project tsconfig.json",
+    "verify:package": "pnpm run lint:exports && pnpm run publint"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.18.2",
     "@vitest/coverage-v8": "catalog:",
     "camelcase": "catalog:",
+    "publint": "catalog:",
     "typescript": "catalog:",
     "vite": "catalog:",
     "vite-plugin-dts": "^4.5.4",
