@@ -30,6 +30,9 @@ catalogs:
     '@vitest/coverage-v8':
       specifier: ^4.0.17
       version: 4.0.17
+    camelcase:
+      specifier: ^9.0.0
+      version: 9.0.0
     eslint:
       specifier: ^9.30.1
       version: 9.30.1
@@ -226,6 +229,10 @@ importers:
         version: 4.0.17(@types/node@24.6.2)(jiti@2.6.1)(yaml@2.8.2)
 
   example:
+    dependencies:
+      typescript-library-template:
+        specifier: workspace:*
+        version: link:../lib
     devDependencies:
       typescript:
         specifier: 'catalog:'
@@ -242,6 +249,9 @@ importers:
       '@vitest/coverage-v8':
         specifier: 'catalog:'
         version: 4.0.17(vitest@4.0.17(@types/node@24.6.2)(jiti@2.6.1)(yaml@2.8.2))
+      camelcase:
+        specifier: 'catalog:'
+        version: 9.0.0
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -1652,6 +1662,10 @@ packages:
   callsites@3.1.0:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
     engines: {node: '>=6'}
+
+  camelcase@9.0.0:
+    resolution: {integrity: sha512-TO9xmyXTZ9HUHI8M1OnvExxYB0eYVS/1e5s7IDMTAoIcwUd+aNcFODs6Xk83mobk0velyHFQgA1yIrvYc6wclw==}
+    engines: {node: '>=20'}
 
   caniuse-lite@1.0.30001780:
     resolution: {integrity: sha512-llngX0E7nQci5BPJDqoZSbuZ5Bcs9F5db7EtgfwBerX9XGtkkiO4NwfDDIRzHTTwcYC8vC7bmeUEPGrKlR/TkQ==}
@@ -4883,6 +4897,8 @@ snapshots:
       get-intrinsic: 1.3.0
 
   callsites@3.1.0: {}
+
+  camelcase@9.0.0: {}
 
   caniuse-lite@1.0.30001780: {}
 

@@ -3,17 +3,7 @@
 <div align="center">
   <h1>typescript-library-template</h1>
   <p>
-    This is a template for TypeScript esm-only library projects. It includes a set of guidelines and configurations to help you get started quickly and maintain a consistent codebase. Can be used to ship either Node.js or browser libraries, or both!
-  </p>
-  <img
-    alt=""
-    src="https://raw.githubusercontent.com/ukorvl/design/master/typescript-library-template/typescript-hotcake.png"
-    loading="lazy"
-    width="200"
-    height="200"
-  />
-  <p>
-    Churn out your own TypeScript libraries with this template - like hotcakes!
+    This is a template for TypeScript ESM-only library projects. It includes guidelines and configurations to help you get started quickly and keep a consistent codebase. It can be used to ship Node.js libraries, browser libraries, or both.
   </p>
 </div>
 
@@ -43,10 +33,11 @@ To get started with this template, use GitHub's **"Use this template"** button t
 git clone your-new-repo
 cd your-new-repo
 pnpm install
+pnpm run setup-repo
 ```
 
 This template intentionally uses generic placeholder metadata and repository links. Update them to your organization values before publishing.
 
 ## License
 
-This project is licensed under the [MIT License](https://github.com/ukorvl/typescript-library-template/blob/main/lib/LICENSE). You can freely use, modify, and distribute this template as per the terms of the license.
+This project is licensed under the [MIT License](./LICENSE). You can freely use, modify, and distribute this template as per the terms of the license.

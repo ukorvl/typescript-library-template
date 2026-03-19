@@ -11,7 +11,7 @@
     "example": "example"
   },
   "scripts": {
-    "build": "echo \"no build specified\" && exit 0",
+    "build": "pnpm -r --parallel --stream --filter ./lib --filter ./docs --filter ./example run build",
     "dev": "pnpm -r --parallel --stream --filter ./lib --filter ./docs --filter ./example run dev",
     "format": "prettier --check \"**/*.{js,ts,jsx,tsx,json,md,yaml,yml}\"",
     "format:fix": "prettier --write \"**/*.{js,ts,jsx,tsx,json,md,yaml,yml}\"",
@@ -21,7 +21,8 @@
     "lint:commits": "bash -c \"if git rev-parse --verify HEAD~1 >/dev/null 2>&1; then pnpm exec commitlint --from=HEAD~1 --to=HEAD; else pnpm exec commitlint --last; fi\"",
     "lint:fix": "eslint --cache --fix --ext .ts,.tsx,.js,.jsx,.mjs,.cjs .",
     "lint-staged": "lint-staged",
-    "prepare": "pnpm run install-git-hooks",
+    "prepare": "pnpm run install-git-hooks && pnpm run setup-repo",
+    "setup-repo": "pnpm -C lib run build",
     "test": "pnpm -r --if-present run test",
     "typecheck": "pnpm -r --if-present run typecheck",
     "version": "bash ./scripts/version.sh"
