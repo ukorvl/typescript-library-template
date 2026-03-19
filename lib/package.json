@@ -13,7 +13,7 @@
     "directory": "lib"
   },
   "license": "MIT",
-  "author": "ukorvl <ukorotovskiy@gmail.com>",
+  "author": "fill-me <fill-me@fill-me.com>",
   "sideEffects": false,
   "type": "module",
   "exports": {

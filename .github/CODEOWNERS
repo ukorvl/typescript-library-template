@@ -1,2 +1,13 @@
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
 # Global
-@ukorvl
+@fill-me
+
+# docs
+/docs @fill-me
+
+# example
+/example @fill-me
+
+# lib
+/lib @fill-me
