@@ -112,6 +112,7 @@ export default [
     ],
     rules: {
       "@typescript-eslint/no-magic-numbers": "off",
+      "@typescript-eslint/no-unsafe-assignment": "off",
     },
   },
   {
@@ -131,7 +132,6 @@ export default [
       "import/no-deprecated": "warn",
       "import/no-unresolved": "error",
       "import/no-unused-modules": "warn",
-      "import/order": "off",
     },
   },
   {
@@ -162,11 +162,11 @@ export default [
       ],
       "unicorn/import-style": "off",
       "unicorn/no-array-reduce": "off",
-      "unicorn/no-array-sort": "off",
-      "unicorn/no-nested-ternary": "off",
+      "unicorn/no-array-sort": "warn",
+      "unicorn/no-nested-ternary": "warn",
       "unicorn/no-null": "off",
-      "unicorn/prefer-module": "off",
-      "unicorn/prevent-abbreviations": "off",
+      "unicorn/prefer-module": "warn",
+      "unicorn/prevent-abbreviations": "warn",
     },
   },
   {
@@ -227,7 +227,7 @@ export default [
     },
     rules: {
       ...vitest.configs.recommended.rules,
-      "no-console": "off",
+      "no-console": "warn",
       "vitest/max-nested-describe": ["error", { max: 3 }],
       "vitest/prefer-lowercase-title": ["error", { ignore: ["describe"] }],
       "vitest/prefer-to-be": "error",

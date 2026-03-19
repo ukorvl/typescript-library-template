@@ -11,24 +11,22 @@ runs:
   using: "composite"
   steps:
     - name: Lint
-      run: npm run lint
+      run: pnpm run lint
       shell: bash
 
     - name: Format
-      run: npm run format
+      run: pnpm run format
       shell: bash
 
     - name: Check for unused files, dependencies, and exports
-      run: npm run knip
+      run: pnpm run knip
       shell: bash
 
     - name: Lint commits
       if: ${{ inputs.check-commits == 'true' }}
-      run: npm run lint:commits
+      run: pnpm run lint:commits
       shell: bash
 
     - name: Check lib exports
-      run: |
-        cd lib
-        npm run lint:exports
+      run: pnpm -C lib run lint:exports
       shell: bash

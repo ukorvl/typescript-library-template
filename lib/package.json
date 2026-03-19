@@ -19,10 +19,9 @@
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/fill-me.mjs"
-      }
+      "types": "./dist/index.d.ts",
+      "import": "./dist/fill-me.mjs",
+      "default": "./dist/fill-me.mjs"
     }
   },
   "main": "dist/fill-me.mjs",
@@ -35,7 +34,7 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite build --watch",
-    "lint:exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm"
+    "lint:exports": "npm_config_cache=.npm-cache attw --pack . --ignore-rules=cjs-resolves-to-esm"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.18.2",

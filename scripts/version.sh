@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # This script handles version bumps for a project (in all required places)
-# Handful replacement of "npm version" command
+# Handful replacement of "pnpm version" command
 
 set -euo pipefail
 
@@ -10,7 +10,7 @@ source "$SCRIPT_DIR/common.sh"
 
 check_command jq
 check_command prettier
-check_command npm
+check_command pnpm
 
 if [ "$#" -ne 1 ]; then
   echo "Usage: $0 [patch|minor|major]"
@@ -30,7 +30,7 @@ echo "You selected a $version_type version bump."
 
 # Bump the version in package.json
 cd "$REPO_ROOT/$LIB_PATH"
-npm version "$version_type" --no-git-tag-version
+pnpm version "$version_type" --no-git-tag-version
 
 new_version=$(jq -r '.version' "$LIB_PACKAGE_JSON")
 if [ -z "$new_version" ]; then

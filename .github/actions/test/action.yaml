@@ -14,7 +14,7 @@ runs:
   using: "composite"
   steps:
     - name: Run tests
-      run: npm run test
+      run: pnpm run test
       shell: bash
 
     - name: Upload tests (lib only) coverage to Coveralls
