@@ -4,7 +4,7 @@
   "private": true,
   "description": "fill-me",
   "license": "MIT",
-  "author": "ukorvl <ukorotovskiy@gmail.com>",
+  "author": "fill-me <fill-me@fill-me.com>",
   "directories": {
     "lib": "lib",
     "doc": "docs",
@@ -25,8 +25,9 @@
     "lint:commits": "bash -c \"npx --no-install commitlint --from=HEAD~1\"",
     "lint:fix": "eslint --cache --fix --ext .ts,.tsx,.js,.jsx .",
     "prepare": "npm run install-git-hooks",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "version": "bash ./scripts/version.sh"
+    "test": "echo \"no test specified\" && exit 0",
+    "version": "bash ./scripts/version.sh",
+    "build": "echo \"no build specified\" && exit 0"
   },
   "simple-git-hooks": {
     "commit-msg": "npx --no-install commitlint --edit $1",
