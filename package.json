@@ -23,7 +23,7 @@
     "install-git-hooks": "npx --no-install simple-git-hooks",
     "knip": "knip --cache --production",
     "lint": "eslint --cache --ext .ts,.tsx,.js,.jsx,.mjs,.cjs .",
-    "lint:commits": "bash -c \"npx --no-install commitlint --from=HEAD~1\"",
+    "lint:commits": "bash -c \"if git rev-parse --verify HEAD~1 >/dev/null 2>&1; then npx --no-install commitlint --from=HEAD~1 --to=HEAD; else npx --no-install commitlint --last; fi\"",
     "lint:fix": "eslint --cache --fix --ext .ts,.tsx,.js,.jsx,.mjs,.cjs .",
     "prepare": "npm run install-git-hooks",
     "test": "echo \"no test specified\" && exit 0",
