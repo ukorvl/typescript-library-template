@@ -31,6 +31,6 @@ runs:
       run: pnpm run lint:commits
       shell: bash
 
-    - name: Check lib exports
-      run: pnpm -C lib run lint:exports
+    - name: Verify package (attw + publint)
+      run: pnpm run verify:package
       shell: bash

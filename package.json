@@ -25,6 +25,7 @@
     "setup-repo": "pnpm -C lib run build",
     "test": "pnpm -r --if-present run test",
     "typecheck": "pnpm -r --if-present run typecheck",
+    "verify:package": "pnpm -C lib run verify:package",
     "version": "bash ./scripts/version.sh"
   },
   "simple-git-hooks": {
