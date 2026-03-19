@@ -1,7 +1,7 @@
 <div align="center">
   <h1>typescript-library-template</h1>
   <p>
-    This is a template for TypeScript esm-only library projects. It includes a set of guidelines and configurations to help you get started quickly and maintain a consistent codebase.
+    This is a template for TypeScript esm-only library projects. It includes a set of guidelines and configurations to help you get started quickly and maintain a consistent codebase. Can be used to ship either Node.js or browser libraries, or both!
   </p>
   <img
     alt=""
@@ -29,7 +29,7 @@ This project is structured to support TypeScript library development with a focu
 - `example/`: Contains example applications demonstrating how to use the library
 - `docs/`: Contains documentation files
 
-In addition, the project uses npm workspaces to manage dependencies across multiple packages, allowing for efficient development and testing.
+In addition, the project uses pnpm workspaces to manage dependencies across multiple packages, allowing for efficient development and testing.
 
 There is also a simple GitHub action setup to run tests and build the library on every push to the main branch. This ensures that the code remains stable and functional. Additionally, it includes lables configuation and a basic issue template to help users report issues effectively.
 
@@ -40,7 +40,7 @@ To get started with this template, use GitHub's **"Use this template"** button t
 ```sh
 git clone your-new-repo
 cd your-new-repo
-npm install
+pnpm install
 ```
 
 The code contains `fill-me` placeholders that you should replace with your own library name and description. This will help you quickly set up your project with the correct branding and information.

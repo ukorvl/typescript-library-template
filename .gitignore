@@ -7,6 +7,8 @@ yarn-error.log*
 
 # Dependency directories
 node_modules/
+.pnpm-store/
+.npm-cache/
 
 # Build output
 dist/
@@ -43,6 +45,7 @@ Thumbs.db
 *.tgz
 .pnpm-debug.log
 *.lock
+!pnpm-lock.yaml
 
 # Misc
 *.log

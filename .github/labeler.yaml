@@ -36,11 +36,17 @@ dependencies:
   - changed-files:
       - any-glob-to-any-file:
           - "**/package.json"
-          - "**/package-lock.json"
-          - "**/yarn.lock"
           - "**/pnpm-lock.yaml"
 
 core:
   - changed-files:
       - any-glob-to-any-file:
           - "lib/src/**"
+
+ai:
+  - changed-files:
+      - any-glob-to-any-file:
+          - AGENTS.md
+          - CLAUDE.md
+          - .agents/**
+          - .github/copilot-instructions.md

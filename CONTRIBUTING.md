@@ -11,13 +11,13 @@ Thank you for your interest in contributing to **fill-me**! We appreciate your h
    cd fill-me
    ```
 
-2. **Install Dependencies**: Ensure you have Node.js and npm installed, then run:
+2. **Install Dependencies**: Ensure you have Node.js and pnpm installed, then run:
 
    ```sh
-   npm install
+   pnpm install
    ```
 
-   Note, that the project uses npm workspaces, so all dependencies will be installed in the root `node_modules` folder.
+   Note, that the project uses pnpm workspaces, so dependencies are managed via `pnpm-lock.yaml` and the pnpm store.
 
 3. **Create a Branch**: Use a meaningful branch name related to your changes.
    ```sh
@@ -30,15 +30,15 @@ Thank you for your interest in contributing to **fill-me**! We appreciate your h
 
 - Start the development environment:
   ```sh
-  npm run dev
+  pnpm run dev
   ```
 - Run tests:
   ```sh
-  npm run test
+  pnpm run test
   ```
 - Build the library:
   ```sh
-  npm run build
+  pnpm run build
   ```
 
 ### Code Guidelines
@@ -46,7 +46,7 @@ Thank you for your interest in contributing to **fill-me**! We appreciate your h
 - Follow the existing code style and conventions.
 - Ensure your changes pass ESLint, Prettier and TypeScript checks:
   ```sh
-  npm run lint
+  pnpm run lint
   ```
 - Keep PRs focused and provide clear descriptions.
 

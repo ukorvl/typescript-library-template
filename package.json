@@ -10,27 +10,22 @@
     "doc": "docs",
     "example": "example"
   },
-  "workspaces": [
-    "docs",
-    "example",
-    "lib"
-  ],
   "scripts": {
     "build": "echo \"no build specified\" && exit 0",
-    "dev": "concurrently \"npm run dev -w lib\" \"npm run dev -w docs\" \"npm run dev -w example\" --kill-others --success last",
+    "dev": "concurrently \"pnpm -C lib dev\" \"pnpm -C docs dev\" \"pnpm -C example dev\" --kill-others --success last",
     "format": "prettier --check \"**/*.{js,ts,jsx,tsx,json,md,yaml,yml}\"",
     "format:fix": "prettier --write \"**/*.{js,ts,jsx,tsx,json,md,yaml,yml}\"",
-    "install-git-hooks": "npx --no-install simple-git-hooks",
+    "install-git-hooks": "pnpm exec simple-git-hooks",
     "knip": "knip --cache --production",
     "lint": "eslint --cache --ext .ts,.tsx,.js,.jsx,.mjs,.cjs .",
-    "lint:commits": "bash -c \"if git rev-parse --verify HEAD~1 >/dev/null 2>&1; then npx --no-install commitlint --from=HEAD~1 --to=HEAD; else npx --no-install commitlint --last; fi\"",
+    "lint:commits": "bash -c \"if git rev-parse --verify HEAD~1 >/dev/null 2>&1; then pnpm exec commitlint --from=HEAD~1 --to=HEAD; else pnpm exec commitlint --last; fi\"",
     "lint:fix": "eslint --cache --fix --ext .ts,.tsx,.js,.jsx,.mjs,.cjs .",
-    "prepare": "npm run install-git-hooks",
+    "prepare": "pnpm run install-git-hooks",
     "test": "echo \"no test specified\" && exit 0",
     "version": "bash ./scripts/version.sh"
   },
   "simple-git-hooks": {
-    "commit-msg": "npx --no-install commitlint --edit $1",
+    "commit-msg": "pnpm exec commitlint --edit $1",
     "preserveUnused": [
       "commit-msg"
     ]
@@ -72,9 +67,18 @@
     "vite-tsconfig-paths": "^6.1.1",
     "vitest": "^4.0.17"
   },
+  "packageManager": "pnpm@10.11.0",
   "engines": {
     "node": ">=24 <25",
-    "npm": ">=10.0.0"
+    "pnpm": ">=10.11.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "oxc-resolver",
+      "simple-git-hooks",
+      "unrs-resolver"
+    ]
   },
   "knip": {
     "ignoreBinaries": [

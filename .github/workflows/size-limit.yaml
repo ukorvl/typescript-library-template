@@ -6,10 +6,10 @@ on:
       - main
     paths:
       - "lib/**"
-      - ".github/actions/install-dependencies/**"
+      - ".github/actions/install/**"
       - ".github/workflows/size-limit.yaml"
       - "package.json"
-      - "package-lock.json"
+      - "pnpm-lock.yaml"
   workflow_dispatch:
 
 permissions:
@@ -40,4 +40,4 @@ jobs:
           skip_step: install
           directory: lib
           build_script: build
-          package_manager: npm
+          package_manager: pnpm

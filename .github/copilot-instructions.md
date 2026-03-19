@@ -60,13 +60,14 @@ Source change (lib/src/**/*)
 
 ## Conventions
 
-- Node.js and npm versions must satisfy root `engines`.
+- Node.js, npm, and pnpm versions must satisfy root `engines`.
 - Use strict TypeScript; avoid `any` unless unavoidable and justified.
 - Keep library exports modular and side-effect free (`sideEffects: false`).
 - Use named exports for public APIs.
 - Keep `lib/package.json` and `lib/jsr.json` versions in sync.
 - Prefer thin adapters and shared core logic over duplicated behavior.
 - Keep JSON-first CLI/tool output where machine consumers are expected.
+- Dependency lifecycle scripts are allowlisted via `pnpm.onlyBuiltDependencies` with `strict-dep-builds=true`.
 
 ## Agent Rules
 
@@ -94,13 +95,13 @@ Source change (lib/src/**/*)
 
 ## Commands
 
-- `npm ci` — install dependencies for all workspaces.
-- `npm run lint` — run ESLint across repository.
-- `npm run lint:fix` — apply lint autofixes.
-- `npm run format` — check Prettier formatting.
-- `npm run format:fix` — write Prettier formatting changes.
-- `npm run knip` — check for unused exports/dependencies.
-- `npm run -w lib build` — build library bundles and declaration files.
-- `npm run -w lib lint:exports` — validate package export/type correctness.
-- `npm run dev` — run workspace dev commands concurrently.
-- `npm run version -- [patch|minor|major]` — sync version bumps in `lib` + `jsr`.
+- `pnpm install --frozen-lockfile` — install dependencies for all workspaces.
+- `pnpm run lint` — run ESLint across repository.
+- `pnpm run lint:fix` — apply lint autofixes.
+- `pnpm run format` — check Prettier formatting.
+- `pnpm run format:fix` — write Prettier formatting changes.
+- `pnpm run knip` — check for unused exports/dependencies.
+- `pnpm -C lib run build` — build library bundles and declaration files.
+- `pnpm -C lib run lint:exports` — validate package export/type correctness.
+- `pnpm run dev` — run workspace dev commands concurrently.
+- `pnpm run version -- [patch|minor|major]` — sync version bumps in `lib` + `jsr`.
