@@ -50,9 +50,10 @@ Thank you for your interest in contributing to this template. We appreciate your
 ### Code Guidelines
 
 - Follow the existing code style and conventions.
-- Ensure your changes pass ESLint, Prettier, and TypeScript checks:
+- Ensure your changes pass ESLint, Prettier, TypeScript, and markdown link checks:
   ```sh
   pnpm run lint
+  pnpm run lint:md-links
   pnpm run typecheck
   ```
 - Keep PRs focused and provide clear descriptions.

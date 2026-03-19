@@ -15,6 +15,10 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      attestations: write
+      id-token: write
     steps:
       - name: Clone repository
         uses: actions/checkout@v6
@@ -24,10 +28,6 @@ jobs:
       - name: Install dependencies
         uses: ./.github/actions/install
 
-      - name: Setup workspace
-        run: pnpm run setup-repo
-        shell: bash
-
       - name: Lint
         uses: ./.github/actions/lint
         with:
@@ -35,6 +35,21 @@ jobs:
 
       - name: Build everything
         uses: ./.github/actions/build
+
+      - name: Pack library artifact
+        run: |
+          mkdir -p artifacts
+          pnpm -C lib pack --pack-destination ../artifacts
+          ls -la artifacts
+        shell: bash
+
+      - name: Upload and attest package artifacts
+        uses: ./.github/actions/attest-build-artifacts
+        with:
+          artifact-name: lib-package
+          subject-path: |
+            artifacts/*.tgz
+          enable-attestation: ${{ github.event_name != 'pull_request' || !github.event.pull_request.head.repo.fork }}
 
       - name: Test
         uses: ./.github/actions/test

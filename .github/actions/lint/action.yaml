@@ -22,6 +22,13 @@ runs:
       run: pnpm run format
       shell: bash
 
+    - name: Validate JSON and YAML files
+      uses: GrantBirki/json-yaml-validate@v4
+
+    - name: Validate markdown links
+      run: pnpm run lint:md-links
+      shell: bash
+
     - name: Check for unused files, dependencies, and exports
       run: pnpm run knip
       shell: bash

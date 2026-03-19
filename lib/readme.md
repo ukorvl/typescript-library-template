@@ -6,7 +6,7 @@
     This is a template for TypeScript ESM-only library projects. It includes guidelines and configurations to help you get started quickly and keep a consistent codebase. It can be used to ship Node.js libraries, browser libraries, or both.
   </p>
   <img
-    alt=""
+    alt="Illustration of a TypeScript library template as a stack of hotcakes"
     src="https://raw.githubusercontent.com/ukorvl/design/master/typescript-library-template/typescript-hotcake.png"
     loading="lazy"
     width="200"
@@ -16,6 +16,16 @@
     Churn out your own TypeScript libraries with this template - like hotcakes!
   </p>
 </div>
+
+## What you get with this template
+
+- _AI-friendly by default_ - the repository already includes instructions for coding agents, making it easier to use AI tools.
+- _Start fast_ without wiring the basics from scratch - the template already gives you a modern TypeScript library foundation, so you can focus on building your package instead of assembling tooling for days.
+- _Strong code quality from day one_ - strict linting, formatting, and type-checking help catch problems early and keep the codebase consistent.
+- A library setup that feels _production-minded_ - build, test, package validation, and workspace structure are already in place.
+- Confidence in your _package output_ - included checks help validate typings, exports, and package quality before you publish.
+- Better _dependency hygiene_ - the repo includes tooling that helps detect unused files.
+- _Future-facing TypeScript support_ - the setup is designed to stay aligned with current and upcoming TypeScript versions and best practices.
 
 ## Table of Contents
 

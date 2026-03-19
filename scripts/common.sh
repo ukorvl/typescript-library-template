@@ -8,7 +8,7 @@ REPO_ROOT="$SCRIPT_DIR/.."
 LIB_PATH="lib"
 LIB_PACKAGE_JSON="$REPO_ROOT/$LIB_PATH/package.json"
 ROOT_PACKAGE_JSON="$REPO_ROOT/package.json"
-EXAMPLES_PATH="examples"
+EXAMPLES_PATH="example"
 
 # Checks if a command is available in the system PATH
 check_command() {

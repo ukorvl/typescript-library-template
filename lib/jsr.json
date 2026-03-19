@@ -1,5 +1,5 @@
 {
-  "exports": "",
+  "exports": "./src/index.ts",
   "imports": {
     "@/": "./src/"
   },
@@ -14,7 +14,7 @@
     ],
     "include": [
       "LICENSE",
-      "README.md",
+      "readme.md",
       "src/**/*.tsx",
       "src/**/*.ts"
     ]
