@@ -19,7 +19,7 @@
 
 ## What you get with this template
 
-- _AI-friendly by default_ - the repository already includes instructions for coding agents, making it easier to use AI tools.
+- _AI-friendly by default_ - the repository already includes _deterministic_ instructions for coding agents, making it easier to use AI tools.
 - _Start fast_ without wiring the basics from scratch - the template already gives you a modern TypeScript library foundation, so you can focus on building your package instead of assembling tooling for days.
 - _Strong code quality from day one_ - strict linting, formatting, and type-checking help catch problems early and keep the codebase consistent.
 - A library setup that feels _production-minded_ - build, test, package validation, and workspace structure are already in place.

@@ -17,11 +17,13 @@ Prepare a release candidate for the `lib/` package with packaging and CI integri
 4. Create and inspect tarball:
    - `pnpm -C lib pack`
 5. Confirm release security posture:
-   - Dependency review + CodeQL workflows present
-   - Build provenance + SBOM steps present
+   - Dependency review and CodeQL workflows present
+   - Build provenance/attestation workflow present
 
 ## Output
 
 - Release readiness summary (`ready` or `blocked`)
+- Recommended semver bump (`patch`/`minor`/`major`)
 - Blocking issues with file references
 - Exact next commands to unblock release
+- Release notes draft (short)

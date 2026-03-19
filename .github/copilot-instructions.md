@@ -1,6 +1,6 @@
 # React TypeScript Library Template — AI Source of Truth
 
-This repository is a pnpm monorepo for shipping a TypeScript library from `lib/` with optional `docs/` and `example/` workspaces.
+This repository is a pnpm monorepo template for shipping a TypeScript library from `lib/`, with `docs/` and `example/` workspaces.
 `AGENTS.md` and `CLAUDE.md` are symlink mirrors of this file.
 
 ## Baseline Rules
@@ -14,8 +14,8 @@ This repository is a pnpm monorepo for shipping a TypeScript library from `lib/`
 ## Workspace Map
 
 - `lib/` — publishable package (`package.json` exports, Vite build, Vitest tests).
-- `docs/` — docs workspace.
-- `example/` — consumer example workspace using `workspace:*` dependency on `typescript-library-template`.
+- `docs/` — user-facing documentation workspace.
+- `example/` — consumer integration workspace.
 
 ## Path-Specific Instructions
 
@@ -38,9 +38,13 @@ These scoped files are authoritative for code under their paths.
 - `reviewer.agent.md`
 - `release.agent.md`
 
-## Agent Skill
+## Outcome Standard
 
-- `packaging.skill/` — package validation skill with scripts/resources for tarball/export/release checks.
+Changes should leave the template in a state where a new team can:
+
+- install dependencies,
+- run lint/typecheck/test,
+- build and verify the package.
 
 ## Required Verification Commands
 
