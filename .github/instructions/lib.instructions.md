@@ -4,15 +4,22 @@ applyTo: "lib/**"
 
 # Library Workspace (`lib/`) Instructions
 
-This workspace is the publishable package.
+This workspace is the package users install from npm.
+Optimize for durable API design, predictable packaging, and low-friction upgrades for teams adopting this template.
 
 ## Technical Rules
 
-- Preserve ESM-first packaging and exports map correctness.
-- Keep `sideEffects: false` assumptions valid.
-- Do not add top-level side effects in `src/` public entry files.
-- Public API changes must be intentional and explicit in `lib/src/index.ts`.
-- Keep bundle metadata aligned: `main`, `module`, `types`, `exports`, and Vite outputs.
+- Keep the public API intentional and explicit in `lib/src/index.ts`.
+- Preserve ESM-first packaging and export map correctness.
+- Keep `sideEffects: false` assumptions true (no top-level runtime side effects in public entries).
+- Keep `main`, `module`, `types`, and `exports` aligned with Vite output files.
+- Avoid template placeholder metadata in publish-facing fields.
+
+## API Quality Expectations
+
+- New exports should include a realistic usage path (tests and/or example updates).
+- Runtime exports and type-only exports must remain tree-shake friendly.
+- Breaking API changes require clear migration notes in docs/changelog updates.
 
 ## Required Validation For `lib/` Changes
 
@@ -31,4 +38,4 @@ pnpm run verify:package
 - Keep `attw` and `publint --strict` passing.
 - Ensure `size-limit` config points to real built artifacts.
 - When package metadata changes, verify tarball contents with `pnpm -C lib pack`.
-- Do not leave placeholder identity values in package metadata intended for users.
+- Keep release workflows aligned with package behavior (build, verify, provenance).
