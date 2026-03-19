@@ -13,5 +13,8 @@
     "typecheck": "tsc --noEmit --project tsconfig.json"
   },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  }
 }
