@@ -35,6 +35,12 @@ const tsConfigs = tseslint.configs.recommendedTypeChecked.map(config => ({
   ...config,
   files: allTsFiles,
 }));
+const importResolverProjects = [
+  "./tsconfig.json",
+  "./lib/tsconfig.json",
+  "./docs/tsconfig.json",
+  "./example/tsconfig.json",
+];
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -123,7 +129,9 @@ export default [
     settings: {
       "import/resolver": {
         typescript: {
-          project: ["./tsconfig.json"],
+          alwaysTryTypes: true,
+          noWarnOnMultipleProjects: true,
+          project: importResolverProjects,
         },
       },
     },
@@ -146,10 +154,10 @@ export default [
     },
   },
   {
-    ...unicorn.configs["flat/recommended"],
+    ...unicorn.configs["recommended"],
     files: allCodeFiles,
     rules: {
-      ...unicorn.configs["flat/recommended"].rules,
+      ...unicorn.configs["recommended"].rules,
       "unicorn/filename-case": [
         "error",
         {

@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "typescript": "catalog:",
+    "vite-plugin-circular-dependency": "catalog:",
     "vitest": "catalog:"
   }
 }

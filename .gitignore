@@ -37,6 +37,7 @@ jest-html-reporters-*/
 # Editor and system files
 .vscode/*
 !.vscode/settings.json
+!.vscode/extensions.json
 .idea/
 *.iml
 Thumbs.db
