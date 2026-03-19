@@ -2,6 +2,7 @@ import camelCase from "camelcase";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { defineConfig } from "vite";
+import circularDependency from "vite-plugin-circular-dependency";
 import dts from "vite-plugin-dts";
 import tsconfigPaths from "vite-tsconfig-paths";
 
@@ -27,6 +28,9 @@ const banner = `
 
 export default defineConfig(() => {
   const plugins = [
+    circularDependency({
+      circleImportThrowErr: true,
+    }),
     tsconfigPaths(),
     dts({
       rollupTypes: true,
