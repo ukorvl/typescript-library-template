@@ -1,14 +1,16 @@
 {
-  "name": "fill-me-example",
+  "name": "typescript-library-template-example",
   "version": "0.0.1",
   "private": true,
-  "description": "fill-me",
+  "description": "Example workspace for the TypeScript library template",
   "keywords": [],
   "license": "MIT",
-  "author": "fill-me <fill-me@fill-me.com>",
+  "author": "Template Maintainers <maintainers@example.com>",
   "scripts": {
     "build": "echo \"No example build is configured yet\"",
-    "dev": "echo \"No example dev server is configured yet\""
+    "dev": "echo \"No example dev server is configured yet\"",
+    "test": "vitest run --config vitest.config.ts",
+    "typecheck": "tsc --noEmit --project tsconfig.json"
   },
   "dependencies": {},
   "devDependencies": {}

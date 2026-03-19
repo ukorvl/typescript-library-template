@@ -4,7 +4,7 @@
     "@/": "./src/"
   },
   "license": "MIT",
-  "name": "fill-me",
+  "name": "@your-scope/typescript-library-template",
   "publish": {
     "exclude": [
       "**/*.test.tsx",

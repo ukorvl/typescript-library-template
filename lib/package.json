@@ -1,32 +1,32 @@
 {
-  "name": "fill-me",
+  "name": "typescript-library-template",
   "version": "0.0.1",
-  "description": "fill-me",
+  "description": "Template TypeScript library package",
   "keywords": [],
-  "homepage": "fill-me",
+  "homepage": "https://github.com/your-org/typescript-library-template",
   "bugs": {
-    "url": "https://fill-me"
+    "url": "https://github.com/your-org/typescript-library-template/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+fill-me",
+    "url": "git+https://github.com/your-org/typescript-library-template.git",
     "directory": "lib"
   },
   "license": "MIT",
-  "author": "fill-me <fill-me@fill-me.com>",
+  "author": "Template Maintainers <maintainers@example.com>",
   "sideEffects": false,
   "type": "module",
   "exports": {
     "./package.json": "./package.json",
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/fill-me.mjs",
-      "default": "./dist/fill-me.mjs"
+      "import": "./dist/typescript-library-template.mjs",
+      "default": "./dist/typescript-library-template.mjs"
     }
   },
-  "main": "dist/fill-me.mjs",
-  "unpkg": "dist/fill-me.umd.js",
-  "module": "dist/fill-me.mjs",
+  "main": "dist/typescript-library-template.mjs",
+  "unpkg": "dist/typescript-library-template.umd.js",
+  "module": "dist/typescript-library-template.mjs",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
@@ -34,7 +34,9 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite build --watch",
-    "lint:exports": "npm_config_cache=.npm-cache attw --pack . --ignore-rules=cjs-resolves-to-esm"
+    "lint:exports": "npm_config_cache=.npm-cache attw --pack . --ignore-rules=cjs-resolves-to-esm",
+    "test": "vitest run --config vitest.config.ts --coverage",
+    "typecheck": "tsc --noEmit --project tsconfig.json"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.18.2",
