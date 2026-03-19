@@ -6,12 +6,9 @@
   "keywords": [],
   "license": "MIT",
   "author": "fill-me <fill-me@fill-me.com>",
-  "type": "",
-  "main": "",
-  "module": "",
   "scripts": {
-    "build": "",
-    "dev": ""
+    "build": "echo \"No example build is configured yet\"",
+    "dev": "echo \"No example dev server is configured yet\""
   },
   "dependencies": {},
   "devDependencies": {}
