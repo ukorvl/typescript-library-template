@@ -1,0 +1,31 @@
+name: "Attest build artifacts"
+description: "Upload build artifacts and generate build provenance attestations"
+
+inputs:
+  artifact-name:
+    description: "Artifact name for upload"
+    required: false
+    default: "build-artifacts"
+  subject-path:
+    description: "Path or glob of files to upload and attest"
+    required: true
+  enable-attestation:
+    description: "Whether to generate attestations (set false for fork PRs)"
+    required: false
+    default: "true"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: ${{ inputs.artifact-name }}
+        path: ${{ inputs.subject-path }}
+        if-no-files-found: error
+
+    - name: Generate build provenance attestation
+      if: ${{ inputs.enable-attestation == 'true' }}
+      uses: actions/attest-build-provenance@v3
+      with:
+        subject-path: ${{ inputs.subject-path }}
