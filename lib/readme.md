@@ -5,6 +5,16 @@
   <p>
     This is a template for TypeScript ESM-only library projects. It includes guidelines and configurations to help you get started quickly and keep a consistent codebase. It can be used to ship Node.js libraries, browser libraries, or both.
   </p>
+  <img
+    alt=""
+    src="https://raw.githubusercontent.com/ukorvl/design/master/typescript-library-template/typescript-hotcake.png"
+    loading="lazy"
+    width="200"
+    height="200"
+  />
+  <p>
+    Churn out your own TypeScript libraries with this template - like hotcakes!
+  </p>
 </div>
 
 ## Table of Contents
