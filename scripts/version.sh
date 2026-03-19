@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # This script handles version bumps for a project (in all required places)
-# Handful replacement of "pnpm version" command
+# Handy replacement for the pnpm version command
 
 set -euo pipefail
 

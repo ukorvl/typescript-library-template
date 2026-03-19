@@ -24,12 +24,16 @@ jobs:
       - name: Install dependencies
         uses: ./.github/actions/install
 
+      - name: Setup workspace
+        run: pnpm run setup-repo
+        shell: bash
+
       - name: Lint
         uses: ./.github/actions/lint
         with:
           check-commits: ${{ github.event_name == 'pull_request' }}
 
-      - name: Build app
+      - name: Build everything
         uses: ./.github/actions/build
 
       - name: Test

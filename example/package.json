@@ -12,7 +12,9 @@
     "test": "vitest run --config vitest.config.ts",
     "typecheck": "tsc --noEmit --project tsconfig.json"
   },
-  "dependencies": {},
+  "dependencies": {
+    "typescript-library-template": "workspace:*"
+  },
   "devDependencies": {
     "typescript": "catalog:",
     "vitest": "catalog:"

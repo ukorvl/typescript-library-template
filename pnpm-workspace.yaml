@@ -12,6 +12,7 @@ catalog:
   "@size-limit/preset-small-lib": "^12.0.0"
   "@types/node": "^24.6.2"
   "@vitest/coverage-v8": "^4.0.17"
+  "camelcase": "^9.0.0"
   "eslint": "^9.30.1"
   "eslint-import-resolver-typescript": "^4.4.4"
   "eslint-plugin-import": "^2.32.0"

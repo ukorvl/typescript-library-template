@@ -41,6 +41,7 @@
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.18.2",
     "@vitest/coverage-v8": "catalog:",
+    "camelcase": "catalog:",
     "typescript": "catalog:",
     "vite": "catalog:",
     "vite-plugin-dts": "^4.5.4",

@@ -20,8 +20,14 @@ Thank you for your interest in contributing to this template. We appreciate your
    Note, that the project uses pnpm workspaces, so dependencies are managed via `pnpm-lock.yaml` and the pnpm store.
 
 3. **Create a Branch**: Use a meaningful branch name related to your changes.
+
    ```sh
    git checkout -b feature/my-new-feature
+   ```
+
+4. Run the **setup script** to build the library before using workspace scripts (lint, build, test, typecheck, dev):
+   ```sh
+   pnpm run setup-repo
    ```
 
 ## Development Workflow
