@@ -50,3 +50,6 @@ Thumbs.db
 *.log.*
 
 *.tsbuildinfo
+
+.agents/skills
+skills-lock.json

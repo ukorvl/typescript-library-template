@@ -16,7 +16,7 @@
     "lib"
   ],
   "scripts": {
-    "dev": "concurrently \"npm run dev:lib\" \"npm run dev:docs\" \"npm run dev:example\" --kill-others --success last",
+    "dev": "concurrently \"npm run dev -w lib\" \"npm run dev -w docs\" \"npm run dev -w example\" --kill-others --success last",
     "format": "prettier --check \"**/*.{js,ts,jsx,tsx,json,md,yaml,yml}\"",
     "format:fix": "prettier --write \"**/*.{js,ts,jsx,tsx,json,md,yaml,yml}\"",
     "install-git-hooks": "npx --no-install simple-git-hooks",
@@ -70,7 +70,6 @@
     "npm": ">=10.0.0"
   },
   "knip": {
-    "ignore": [],
     "ignoreBinaries": [
       "commitlint",
       "commit-msg"
