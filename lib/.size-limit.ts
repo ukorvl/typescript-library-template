@@ -1,18 +1,30 @@
 import type { SizeLimitConfig } from "size-limit";
 
-export default [
+import packageJson from "./package.json" with { type: "json" };
+
+const esmPath = packageJson.module || packageJson.main;
+const umdPath = packageJson.unpkg;
+
+if (!esmPath) {
+  throw new Error("Set `module` or `main` in lib/package.json for size-limit.");
+}
+
+const config: SizeLimitConfig = [
   {
     name: "ESM",
-    path: "dist/fill-me.mjs", // Replace with your actual ESM output file
-    limit: "5000 kB", // Adjust the limit as needed
-    import: "*",
+    path: esmPath,
+    limit: "5 kB",
     brotli: true,
   },
-  {
+];
+
+if (typeof umdPath === "string" && umdPath !== "") {
+  config.push({
     name: "UMD",
-    path: "dist/fill-me.umd.js", // Replace with your actual UMD output file
-    limit: "5000 kB", // Adjust the limit as needed
-    import: "*",
+    path: umdPath,
+    limit: "5 kB",
     brotli: true,
-  },
-] satisfies SizeLimitConfig;
+  });
+}
+
+export default config;
