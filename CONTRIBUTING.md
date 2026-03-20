@@ -1,85 +1,48 @@
-# Contributing to This Template
+# Contributing
 
-Thank you for your interest in contributing to this template. We appreciate your help in improving and maintaining this project.
+## Getting started
 
-## Getting Started
+1. Fork and clone the repository.
+2. Install dependencies:
 
-1. **Fork the Repository**: Click the "Fork" button at the top right of the repository page and clone your fork.
+```sh
+pnpm install
+```
 
-   ```sh
-   git clone https://github.com/your-org/typescript-library-template.git
-   cd typescript-library-template
-   ```
+3. Build the library workspace once before running consumer workspaces:
 
-2. **Install Dependencies**: Ensure you have Node.js and pnpm installed, then run:
+```sh
+pnpm run setup-repo
+```
 
-   ```sh
-   pnpm install
-   ```
+## Development commands
 
-   Note, that the project uses pnpm workspaces, so dependencies are managed via `pnpm-lock.yaml` and the pnpm store.
+```sh
+pnpm run dev
+pnpm run build
+pnpm run lint
+pnpm run lint:md-links
+pnpm run typecheck
+pnpm run test
+pnpm run verify:package
+```
 
-3. **Create a Branch**: Use a meaningful branch name related to your changes.
+Workspace commands:
 
-   ```sh
-   git checkout -b feature/my-new-feature
-   ```
+```sh
+pnpm -C docs run dev
+pnpm -C docs run build
+pnpm -C example run dev
+pnpm -C example run build
+```
 
-4. Run the **setup script** to build the library before using workspace scripts (lint, build, test, typecheck, dev):
-   ```sh
-   pnpm run setup-repo
-   ```
+## Pull request expectations
 
-## Development Workflow
-
-### Running the Project
-
-- Start the development environment:
-  ```sh
-  pnpm run dev
-  ```
-- Run tests:
-  ```sh
-  pnpm run test
-  ```
-- Build the library:
-  ```sh
-  pnpm run build
-  ```
-
-### Code Guidelines
-
-- Follow the existing code style and conventions.
-- Ensure your changes pass ESLint, Prettier, TypeScript, and markdown link checks:
-  ```sh
-  pnpm run lint
-  pnpm run lint:md-links
-  pnpm run typecheck
-  ```
-- Keep PRs focused and provide clear descriptions.
-
-## Submitting Changes
-
-1. **Commit Your Changes**:
-   ```sh
-   git commit -m "feat: Add new feature"
-   ```
-   Note, that we use commitlint to enforce conventional commit messages.
-2. **Push to Your Fork**:
-   ```sh
-   git push origin feature/my-new-feature
-   ```
-3. **Open a Pull Request**:
-   - Go to the original repository.
-   - Click "New Pull Request".
-   - Select your branch and submit the PR with a clear description.
-
-## Issues and Feature Requests
-
-- Use the **GitHub Issues** tab to report bugs and request features.
+- Keep changes scoped and well-described.
+- Update docs/examples when public API or command behavior changes.
+- Ensure all required verification commands pass before opening a PR.
+- Use conventional commit messages.
 
 ## License
 
-By contributing, you agree that your code will be licensed under the [MIT License](./lib/LICENSE).
-
-Thank you for your contributions! 🎉
+By contributing, you agree your contributions are licensed under [MIT](./lib/LICENSE).

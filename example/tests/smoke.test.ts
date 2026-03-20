@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { runLibraryExample } from "../src/index.js";
+import { runLibraryExample } from "../src";
 
 describe("example workspace smoke", () => {
   it("uses the library workspace package", () => {

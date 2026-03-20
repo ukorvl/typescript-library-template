@@ -1,7 +1,85 @@
-**Template notice:** This repository is a starter template. Replace package metadata (names, URLs, emails, and publish settings) before your first release.
+**Template notice:** Replace package metadata (name, URLs, emails, owners, and publish settings) before your first public release.
+
+<p align="center">
+  <a href="https://shields.io/docs/static-badges">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/version-0.0.0--template-1e2029?style=flat&logo=npm&logoColor=ffffff">
+      <img src="https://img.shields.io/badge/version-0.0.0--template-ffcc00?style=flat&logo=npm&logoColor=000000" alt="Version">
+    </picture>
+  </a>
+
+  <a href="https://shields.io/docs/static-badges">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/downloads-mock-1e2029?style=flat&logo=npm&logoColor=ffffff">
+      <img src="https://img.shields.io/badge/downloads-mock-ffcc00?style=flat&logo=npm&logoColor=000000" alt="Downloads">
+    </picture>
+  </a>
+
+  <a href="https://shields.io/docs/static-badges">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/build-mock--passing-1e2029?style=flat&logo=githubactions&logoColor=ffffff">
+      <img src="https://img.shields.io/badge/build-mock--passing-ffcc00?style=flat&logo=githubactions&logoColor=000000" alt="Build Status">
+    </picture>
+  </a>
+
+  <a href="https://shields.io/docs/static-badges">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/license-MIT-1e2029?style=flat">
+      <img src="https://img.shields.io/badge/license-MIT-ffcc00?style=flat" alt="License">
+    </picture>
+  </a>
+
+  <a href="https://shields.io/docs/static-badges">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/bundle-size%20mock-1e2029?style=flat">
+      <img src="https://img.shields.io/badge/bundle-size%20mock-ffcc00?style=flat" alt="Minified size">
+    </picture>
+  </a>
+
+  <a href="https://shields.io/docs/static-badges">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/code%20style-eslint-1e2029?style=flat">
+      <img src="https://img.shields.io/badge/code%20style-eslint-ffcc00?style=flat" alt="Code Style">
+    </picture>
+  </a>
+
+  <a href="https://shields.io/docs/static-badges">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/module-ESM--only-1e2029?style=flat">
+      <img src="https://img.shields.io/badge/module-ESM--only-ffcc00?style=flat" alt="ESM Only">
+    </picture>
+  </a>
+
+  <a href="https://shields.io/docs/static-badges">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/contributions-welcome-1e2029?style=flat">
+      <img src="https://img.shields.io/badge/contributions-welcome-ffcc00?style=flat" alt="Contributions">
+    </picture>
+  </a>
+
+  <a href="https://shields.io/docs/static-badges">
+    <picture>
+      <source
+        media="(prefers-color-scheme: dark)"
+        srcset="https://img.shields.io/badge/coverage-100%25%20mock-1e2029?style=flat&logo=coveralls&logoColor=ffffff"
+      >
+      <img
+        src="https://img.shields.io/badge/coverage-100%25%20mock-ffcc00?style=flat&logo=coveralls&logoColor=000000"
+        alt="Coverage"
+      >
+    </picture>
+  </a>
+
+  <a href="https://shields.io/docs/static-badges">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/jsr-template-1e2029?style=flat&logo=javascript&logoColor=ffffff">
+      <img src="https://img.shields.io/badge/jsr-template-ffcc00?style=flat&logo=javascript&logoColor=000000" alt="Jsr version">
+    </picture>
+  </a>
+</p>
 
 <div align="center">
-  <h1>typescript-library-template</h1>
+  <h1>TypeScript Library Template</h1>
   <p>
     This is a template for TypeScript ESM-only library projects. It includes guidelines and configurations to help you get started quickly and keep a consistent codebase. It can be used to ship Node.js libraries, browser libraries, or both.
   </p>
@@ -27,25 +105,13 @@
 - Better _dependency hygiene_ - the repo includes tooling that helps detect unused files.
 - _Future-facing TypeScript support_ - the setup is designed to stay aligned with current and upcoming TypeScript versions and best practices.
 
-## Table of Contents
+## Workspace layout
 
-- [Structure](#structure)
-- [Getting Started](#getting-started)
-- [License](#license)
+- `lib/` publishable package workspace.
+- `docs/` minimal Vite docs shell that uses package imports.
+- `example/` minimal Vite consumer integration workspace.
 
-## Structure
-
-This project is structured to support TypeScript library development with a focus on modularity, tree-shaking, and maintainability. Key directories include:
-
-- `lib/`: Contains the library source code
-- `example/`: Contains example applications demonstrating how to use the library
-- `docs/`: Contains documentation files
-
-In addition, the project uses pnpm workspaces to manage dependencies across multiple packages, allowing for efficient development and testing.
-
-There is also a simple GitHub action setup to run tests and build the library on every push to the main branch. This ensures that the code remains stable and functional. Additionally, it includes lables configuation and a basic issue template to help users report issues effectively.
-
-## Getting Started
+## Quick start
 
 To get started with this template, use GitHub's **"Use this template"** button to create a new repository based on this template. Then, clone your new repository and install the dependencies.
 
@@ -57,6 +123,30 @@ pnpm run setup-repo
 ```
 
 This template intentionally uses generic placeholder metadata and repository links. Update them to your organization values before publishing.
+
+## Core commands
+
+```sh
+pnpm run setup-repo
+pnpm run lint
+pnpm run typecheck
+pnpm run test
+pnpm run build
+pnpm run verify:package
+```
+
+Workspace-specific commands:
+
+```sh
+pnpm -C docs run dev
+pnpm -C docs run build
+pnpm -C example run dev
+pnpm -C example run build
+```
+
+In addition, the project uses pnpm workspaces to manage dependencies across multiple packages, allowing for efficient development and testing.
+
+There is also a simple GitHub action setup to run tests and build the library on every push to the main branch. This ensures that the code remains stable and functional. Additionally, it includes labels configuation and a basic issue template to help users report issues effectively.
 
 ## License
 

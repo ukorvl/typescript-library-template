@@ -1,4 +1,4 @@
-# React TypeScript Library Template — AI Source of Truth
+# TypeScript Library Template — AI Source of Truth
 
 This repository is a pnpm monorepo template for shipping a TypeScript library from `lib/`, with `docs/` and `example/` workspaces.
 `AGENTS.md` and `CLAUDE.md` are symlink mirrors of this file.
@@ -35,8 +35,8 @@ These scoped files are authoritative for code under their paths.
 
 ## Custom Agent Roles
 
-- `reviewer.agent.md`
-- `release.agent.md`
+- `.github/agents/reviewer.agent.md`
+- `.github/agents/release.agent.md`
 
 ## Outcome Standard
 

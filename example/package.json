@@ -7,8 +7,9 @@
   "license": "MIT",
   "author": "Template Maintainers <maintainers@example.com>",
   "scripts": {
-    "build": "echo \"No example build is configured yet\"",
-    "dev": "echo \"No example dev server is configured yet\"",
+    "build": "vite build",
+    "dev": "vite dev",
+    "preview": "vite preview",
     "test": "vitest run --config vitest.config.ts",
     "typecheck": "tsc --noEmit --project tsconfig.json"
   },
@@ -17,7 +18,9 @@
   },
   "devDependencies": {
     "typescript": "catalog:",
+    "vite": "catalog:",
     "vite-plugin-circular-dependency": "catalog:",
+    "vite-tsconfig-paths": "catalog:",
     "vitest": "catalog:"
   }
 }

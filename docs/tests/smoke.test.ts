@@ -1,7 +1,9 @@
 import { describe, expect, it } from "vitest";
 
+import { getDocumentationIntro } from "../src/content";
+
 describe("docs workspace smoke", () => {
-  it("always passes", () => {
-    expect(true).toBe(true);
+  it("documents real setup flow", () => {
+    expect(getDocumentationIntro()).toContain("setup-repo");
   });
 });

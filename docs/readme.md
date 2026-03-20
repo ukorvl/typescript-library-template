@@ -1,7 +1,14 @@
-<div align="center">
-  <h1>typescript-library-template-docs</h1>
-  <p>
-    This is a documentation subdirectory of TypeScript library template repository.
-    It is supposed to explain in detailes project's architecture, usage, and configuration.
-  </p>
-</div>
+# Documentation Workspace
+
+This workspace provides a minimal Vite-powered docs shell for the template.
+
+## Commands
+
+- `pnpm -C docs run dev` starts the docs dev server.
+- `pnpm -C docs run build` builds static docs assets.
+- `pnpm -C docs run test` runs docs smoke tests.
+- `pnpm -C docs run typecheck` validates docs TypeScript.
+
+## Notes
+
+- Run `pnpm run setup-repo` once before first docs build/dev session.
