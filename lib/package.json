@@ -38,7 +38,7 @@
     "publint": "publint --strict",
     "test": "vitest run --config vitest.config.ts --coverage",
     "typecheck": "tsc --noEmit --project tsconfig.json",
-    "verify:package": "pnpm run lint:exports && pnpm run publint"
+    "verify:package": "pnpm run build && pnpm run lint:exports && pnpm run publint"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.18.2",

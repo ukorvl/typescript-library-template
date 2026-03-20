@@ -11,7 +11,7 @@
     "example": "example"
   },
   "scripts": {
-    "build": "pnpm -r --parallel --stream --filter ./lib --filter ./docs --filter ./example run build",
+    "build": "pnpm -C lib run build && pnpm -r --parallel --stream --filter ./docs --filter ./example run build",
     "dev": "pnpm -r --parallel --stream --filter ./lib --filter ./docs --filter ./example run dev",
     "format": "prettier --check \"**/*.{js,ts,jsx,tsx,json,md,yaml,yml}\"",
     "format:fix": "prettier --write \"**/*.{js,ts,jsx,tsx,json,md,yaml,yml}\"",

@@ -1,4 +1,4 @@
-# This file is used by actions/labeler to automaticanyy label pull requests.
+# This file is used by actions/labeler to automatically label pull requests.
 
 ci:
   - changed-files:
@@ -13,7 +13,9 @@ documentation:
       - any-glob-to-any-file:
           - "docs/**"
           - "**/README.md"
+          - "**/readme.md"
           - "**/CHANGELOG.md"
+          - "**/changelog.md"
 
 tests:
   - changed-files:
@@ -49,4 +51,7 @@ ai:
           - AGENTS.md
           - CLAUDE.md
           - .agents/**
+          - .github/agents/**
+          - .github/prompts/**
+          - .github/instructions/**
           - .github/copilot-instructions.md

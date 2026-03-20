@@ -36,6 +36,12 @@ jobs:
       - name: Build everything
         uses: ./.github/actions/build
 
+      - name: Test
+        uses: ./.github/actions/test
+        with:
+          upload-coverage: ${{ github.event_name == 'push' }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Pack library artifact
         run: |
           mkdir -p artifacts
@@ -50,12 +56,6 @@ jobs:
           subject-path: |
             artifacts/*.tgz
           enable-attestation: ${{ github.event_name != 'pull_request' || !github.event.pull_request.head.repo.fork }}
-
-      - name: Test
-        uses: ./.github/actions/test
-        with:
-          upload-coverage: ${{ github.event_name == 'push' }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
 
   typescript-readiness:
     name: TypeScript Readiness (${{ matrix.typescript-version }})

@@ -1,14 +1,7 @@
-# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
-# TODO: Add code owner(s) when known
+# Example CODEOWNERS file.
+# Replace these examples with real owners before enabling branch protection.
 
-# Global
-@fill-me
-
-# docs
-/docs @fill-me
-
-# example
-/example @fill-me
-
-# lib
-/lib @fill-me
+# * @your-org/team
+# /lib @your-org/lib-maintainers
+# /docs @your-org/docs-maintainers
+# /example @your-org/example-maintainers

@@ -9,9 +9,13 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import packageJson from "./package.json" with { type: "json" };
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
+
 const packageName = packageJson.name;
+const packageNameParts: string[] = packageName.split("/");
+const packageFileBaseName = packageNameParts.at(-1) ?? packageName;
 const packageVersion = packageJson.version;
 const packageLicense = packageJson.license;
+
 const umdGlobalName = camelCase(packageName.replace(/^@/u, "").split("/"), {
   pascalCase: true,
 });
@@ -48,9 +52,9 @@ export default defineConfig(() => {
         name: umdGlobalName,
         formats: ["es", "umd"],
         fileName: format => {
-          if (format === "es") return `${packageName}.mjs`;
-          if (format === "umd") return `${packageName}.umd.js`;
-          return `${packageName}.js`;
+          if (format === "es") return `${packageFileBaseName}.mjs`;
+          if (format === "umd") return `${packageFileBaseName}.umd.js`;
+          return `${packageFileBaseName}.js`;
         },
       },
       rollupOptions: {
