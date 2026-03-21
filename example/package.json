@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "private": true,
   "description": "Example workspace for the TypeScript library template",
-  "keywords": [],
   "license": "MIT",
   "author": "Template Maintainers <maintainers@example.com>",
   "scripts": {
