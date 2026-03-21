@@ -2,6 +2,7 @@ import js from "@eslint/js";
 import pluginImport from "eslint-plugin-import";
 import jsdoc from "eslint-plugin-jsdoc";
 import noSecrets from "eslint-plugin-no-secrets";
+import packageJson from "eslint-plugin-package-json";
 import perfectionist from "eslint-plugin-perfectionist";
 import promisePlugin from "eslint-plugin-promise";
 import * as regexpPlugin from "eslint-plugin-regexp";
@@ -10,6 +11,7 @@ import sonarjs from "eslint-plugin-sonarjs";
 import unicorn from "eslint-plugin-unicorn";
 import vitest from "eslint-plugin-vitest";
 import globals from "globals";
+import * as jsoncParser from "jsonc-eslint-parser";
 import tseslint from "typescript-eslint";
 
 const rootTsFiles = ["*.{ts,mts,cts}"];
@@ -22,6 +24,8 @@ const workspaceJsFiles = ["{lib,docs,example}/**/*.{js,mjs,cjs,jsx}"];
 const allJsFiles = [...rootJsFiles, ...workspaceJsFiles];
 
 const allCodeFiles = [...allTsFiles, ...allJsFiles];
+const allJsonFiles = ["**/*.json"];
+const packageJsonFiles = ["**/package.json"];
 const sourceCodeFiles = [
   "lib/**/*.{ts,mts,cts,tsx,js,mjs,cjs,jsx}",
   "scripts/**/*.{ts,mts,cts,js,mjs,cjs}",
@@ -53,6 +57,21 @@ export default [
       "**/.astro/**",
       "*.tgz",
     ],
+  },
+  {
+    files: allJsonFiles,
+    languageOptions: {
+      parser: jsoncParser,
+    },
+  },
+  {
+    ...packageJson.configs.recommended,
+    files: packageJsonFiles,
+    settings: {
+      packageJson: {
+        enforceForPrivate: false,
+      },
+    },
   },
   {
     ...js.configs.recommended,

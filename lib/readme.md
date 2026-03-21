@@ -93,13 +93,14 @@
   <p>
     Churn out your own TypeScript libraries with this template - like hotcakes!
   </p>
+  <br />
 </div>
 
 ## What you get with this template
 
 - _AI-friendly by default_ - the repository already includes _deterministic_ instructions for coding agents, making it easier to use AI tools.
 - _Start fast_ without wiring the basics from scratch - the template already gives you a modern TypeScript library foundation, so you can focus on building your package instead of assembling tooling for days.
-- _Strong code quality from day one_ - strict linting, formatting, and type-checking help catch problems early and keep the codebase consistent.
+- _Strong code quality from day one_ - strict linting, formatting, and type-checking help catch problems early and keep the codebase consistent. All linters configs are carefully curated to balance strictness with developer experience.
 - A library setup that feels _production-minded_ - build, test, package validation, and workspace structure are already in place.
 - Confidence in your _package output_ - included checks help validate typings, exports, and package quality before you publish.
 - Better _dependency hygiene_ - the repo includes tooling that helps detect unused files.
@@ -156,7 +157,7 @@ pnpm -C example run build
 
 In addition, the project uses pnpm workspaces to manage dependencies across multiple packages, allowing for efficient development and testing.
 
-There is also a GitHub action setup to run tests and build the library on every push to the main branch. This ensures that the code remains stable and functional. Additionally, it includes labels configuation and a basic issue template to help users report issues effectively.
+There is also a GitHub action setup to run tests and build the library on every push to the main branch. This ensures that the code remains stable and functional. Additionally, it includes labels configuration and a basic issue template to help users report issues effectively.
 
 ## License
 
