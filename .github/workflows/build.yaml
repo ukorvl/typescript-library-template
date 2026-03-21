@@ -42,21 +42,6 @@ jobs:
           upload-coverage: ${{ github.event_name == 'push' }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Pack library artifact
-        run: |
-          mkdir -p artifacts
-          pnpm -C lib pack --pack-destination ../artifacts
-          ls -la artifacts
-        shell: bash
-
-      - name: Upload and attest package artifacts
-        uses: ./.github/actions/attest-build-artifacts
-        with:
-          artifact-name: lib-package
-          subject-path: |
-            artifacts/*.tgz
-          enable-attestation: ${{ github.event_name != 'pull_request' || !github.event.pull_request.head.repo.fork }}
-
   typescript-readiness:
     name: TypeScript Readiness (${{ matrix.typescript-version }})
     runs-on: ubuntu-latest

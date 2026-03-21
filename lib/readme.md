@@ -115,6 +115,16 @@
 
 To get started with this template, use GitHub's **"Use this template"** button to create a new repository based on this template. Then, clone your new repository and install the dependencies.
 
+<!-- TEMPLATE_INIT_START -->
+
+Run the template initializer once before your first install:
+
+```sh
+pnpm run init:template
+```
+
+<!-- TEMPLATE_INIT_END -->
+
 ```sh
 git clone your-new-repo
 cd your-new-repo
@@ -146,7 +156,7 @@ pnpm -C example run build
 
 In addition, the project uses pnpm workspaces to manage dependencies across multiple packages, allowing for efficient development and testing.
 
-There is also a simple GitHub action setup to run tests and build the library on every push to the main branch. This ensures that the code remains stable and functional. Additionally, it includes labels configuation and a basic issue template to help users report issues effectively.
+There is also a GitHub action setup to run tests and build the library on every push to the main branch. This ensures that the code remains stable and functional. Additionally, it includes labels configuation and a basic issue template to help users report issues effectively.
 
 ## License
 
