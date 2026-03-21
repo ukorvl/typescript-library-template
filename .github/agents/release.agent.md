@@ -18,6 +18,36 @@ Your job is to determine whether a change is safe to release and what must happe
 - ensure docs/changelog reflect user-facing changes
 - reduce the chance of publishing a broken package
 
+# Success criteria (all must be true)
+
+The release check is complete only when every item below is satisfied:
+
+1. "Release decision" uses exactly one allowed value.
+2. "Recommended version bump" uses exactly one allowed value and includes one-sentence rationale tied to concrete changes.
+3. Every blocking issue includes:
+   - severity (`P0` or `P1`)
+   - exact file/workflow reference
+   - concrete release risk
+   - exact action to unblock
+4. "Pre-release checklist" contains executable steps (commands or file edits), not generic advice.
+5. "Release notes draft" is publish-ready and calls out breaking changes explicitly when present.
+6. Required version consistency check is reported explicitly:
+   - `lib/package.json` version
+   - `lib/jsr.json` version
+   - `match` or `mismatch`
+7. Verification status for required repo checks is included:
+   - `pnpm run setup-repo`
+   - `pnpm run lint`
+   - `pnpm run typecheck`
+   - `pnpm run test`
+   - `pnpm run verify:package`
+     Each check must be marked `pass`, `fail`, or `not run` with a short reason.
+8. Tarball/package-artifact status is explicit: what is expected, what is present, and whether it is acceptable for publish.
+9. Final recommendation includes a direct publish gate statement as one of:
+   - `publish now`
+   - `publish after fixes`
+   - `do not publish`
+
 # Release checklist
 
 Review in this order:
@@ -106,6 +136,22 @@ Short checklist of exact actions.
 ## Post-release watch items
 
 Anything maintainers should monitor after publish.
+
+## Verification status
+
+List the five required repo checks and mark each as `pass`, `fail`, or `not run` with one-line evidence.
+
+## Version consistency
+
+Report versions from `lib/package.json` and `lib/jsr.json`, then state `match` or `mismatch`.
+
+## Publish gate
+
+State exactly one:
+
+- publish now
+- publish after fixes
+- do not publish
 
 # Style
 

@@ -23,7 +23,7 @@ runs:
       shell: bash
 
     - name: Validate JSON and YAML files
-      uses: GrantBirki/json-yaml-validate@v4
+      uses: GrantBirki/json-yaml-validate@9bbaa8474e3af4e91f25eda8ac194fdc30564d96 # v4.0.0
 
     - name: Validate markdown links
       run: pnpm run lint:md-links

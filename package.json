@@ -47,9 +47,6 @@
     ],
     "**/*.{md,yaml,yml}": "pnpm exec prettier --write"
   },
-  "overrides": {
-    "eslint": "^9.30.1"
-  },
   "devDependencies": {
     "@commitlint/cli": "catalog:",
     "@commitlint/config-conventional": "catalog:",
@@ -104,6 +101,13 @@
     "ignoreBinaries": [
       "commitlint",
       "commit-msg"
-    ]
+    ],
+    "workspaces": {
+      "lib": {
+        "ignore": [
+          "vite/plugins/prepend-entry-banner.ts"
+        ]
+      }
+    }
   }
 }

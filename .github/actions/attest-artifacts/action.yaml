@@ -22,7 +22,7 @@ runs:
   using: "composite"
   steps:
     - name: Upload artifacts
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
       with:
         name: ${{ inputs.artifact-name }}
         path: |
@@ -32,13 +32,13 @@ runs:
 
     - name: Generate provenance attestation
       if: ${{ inputs.enable-attestation == 'true' }}
-      uses: actions/attest@v4
+      uses: actions/attest@59d89421af93a897026c735860bf21b6eb4f7b26 # v4.1.0
       with:
         subject-path: ${{ inputs.subject-path }}
 
     - name: Generate SBOM attestation
       if: ${{ inputs.enable-attestation == 'true' && inputs.sbom-path != '' }}
-      uses: actions/attest@v4
+      uses: actions/attest@59d89421af93a897026c735860bf21b6eb4f7b26 # v4.1.0
       with:
         subject-path: ${{ inputs.subject-path }}
         sbom-path: ${{ inputs.sbom-path }}

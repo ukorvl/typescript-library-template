@@ -1,0 +1,44 @@
+name: "Pack lib tarball"
+description: "Prepare artifacts directory and pack the lib workspace into a tarball"
+
+inputs:
+  artifacts-dir:
+    description: "Directory where tarball artifacts should be written"
+    required: false
+    default: "artifacts"
+
+outputs:
+  tarball-path:
+    description: "Path to the packed lib tarball"
+    value: ${{ steps.find-tarball.outputs.tarball_path }}
+
+runs:
+  using: "composite"
+  steps:
+    - name: Prepare artifacts directory
+      shell: bash
+      run: mkdir -p "${INPUTS_ARTIFACTS_DIR}"
+      env:
+        INPUTS_ARTIFACTS_DIR: ${{ inputs.artifacts-dir }}
+
+    - name: Pack library tarball
+      shell: bash
+      run: |
+        pnpm -C lib pack --pack-destination "../${INPUTS_ARTIFACTS_DIR}"
+        ls -la "${INPUTS_ARTIFACTS_DIR}"
+      env:
+        INPUTS_ARTIFACTS_DIR: ${{ inputs.artifacts-dir }}
+
+    - name: Resolve tarball path
+      id: find-tarball
+      shell: bash
+      run: |
+        shopt -s nullglob
+        tarballs=("${INPUTS_ARTIFACTS_DIR}"/*.tgz)
+        if [[ ${#tarballs[@]} -eq 0 ]]; then
+          echo "No tarball found in ${INPUTS_ARTIFACTS_DIR}" >&2
+          exit 1
+        fi
+        echo "tarball_path=${tarballs[0]}" >> "${GITHUB_OUTPUT}"
+      env:
+        INPUTS_ARTIFACTS_DIR: ${{ inputs.artifacts-dir }}

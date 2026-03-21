@@ -18,7 +18,9 @@ jobs:
 
     steps:
       - name: Clone repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
 
       - name: Install dependencies
         uses: ./.github/actions/install
@@ -37,15 +39,10 @@ jobs:
           upload-coverage: false
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Prepare artifacts directory
-        run: mkdir -p artifacts
-        shell: bash
-
       - name: Pack library tarball
-        run: |
-          pnpm -C lib pack --pack-destination ../artifacts
-          ls -la artifacts
-        shell: bash
+        uses: ./.github/actions/pack-lib
+        with:
+          artifacts-dir: artifacts
 
       - name: Generate SBOM
         run: |
@@ -53,7 +50,7 @@ jobs:
         shell: bash
 
       - name: Attest tarball + SBOM
-        uses: actions/attest@v4
+        uses: actions/attest@59d89421af93a897026c735860bf21b6eb4f7b26 # v4.1.0
         with:
           subject-path: artifacts/*.tgz
           sbom-path: artifacts/library.sbom.cdx.json

@@ -10,6 +10,7 @@
   },
   "extends": "../tsconfig.json",
   "include": [
+    ".size-limit.ts",
     "src",
     "tests",
     "vite/**/*.ts",

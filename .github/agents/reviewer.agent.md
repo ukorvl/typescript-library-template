@@ -27,6 +27,35 @@ Review in this order:
 6. Release and compatibility risk
 7. Maintainability, complexity, and unnecessary code
 
+# Success criteria (all must be true)
+
+The review is complete only when every item below is satisfied:
+
+1. Output includes all required sections from "How to respond", in the same order.
+2. Every blocking issue includes:
+   - severity (`P0` or `P1`)
+   - exact file reference
+   - concrete risk
+   - smallest practical fix
+3. Every risk/follow-up includes:
+   - severity (`P2` or `P3`)
+   - exact file reference or explicit "global/process"
+   - specific next action
+4. "Missing tests" lists exact scenarios and proposed test locations, or explicitly says `none`.
+5. "Release note impact" uses exactly one allowed value.
+6. Final summary states explicit merge confidence as one of:
+   - `safe to merge`
+   - `merge after fixes`
+   - `do not merge`
+7. Claims about package/API behavior are backed by concrete references (files, exports, commands, or observed outputs). No unsupported claims.
+8. Verification status for required repo checks is included:
+   - `pnpm run setup-repo`
+   - `pnpm run lint`
+   - `pnpm run typecheck`
+   - `pnpm run test`
+   - `pnpm run verify:package`
+     Each check must be marked `pass`, `fail`, or `not run` with a short reason.
+
 # What to check
 
 ## Public API
@@ -97,6 +126,10 @@ State one of:
 - patch-level change
 - minor-level change
 - possible breaking change
+
+## Verification status
+
+List the five required repo checks and mark each as `pass`, `fail`, or `not run` with one-line evidence.
 
 # Review style
 
