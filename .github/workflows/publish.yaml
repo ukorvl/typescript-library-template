@@ -9,6 +9,7 @@ permissions:
   contents: read
   id-token: write
   attestations: write
+  artifact-metadata: write
 
 jobs:
   publish:
@@ -58,5 +59,5 @@ jobs:
           sbom-path: artifacts/library.sbom.cdx.json
 
       - name: Publish to npm
-        run: npm publish --prefix lib --access public
+        run: npm publish --prefix lib
         shell: bash

@@ -43,6 +43,7 @@
     "@arethetypeswrong/cli": "^0.18.2",
     "@vitest/coverage-v8": "catalog:",
     "camelcase": "catalog:",
+    "magic-string": "catalog:",
     "publint": "catalog:",
     "typescript": "catalog:",
     "vite": "catalog:",
