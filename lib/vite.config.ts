@@ -7,6 +7,7 @@ import dts from "vite-plugin-dts";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 import packageJson from "./package.json" with { type: "json" };
+import { prependEntryBannerPlugin } from "./vite/plugins/prepend-entry-banner";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -20,16 +21,6 @@ const umdGlobalName = camelCase(packageName.replace(/^@/u, "").split("/"), {
   pascalCase: true,
 });
 
-const banner = `
-/**
-* ${packageName} v${packageVersion}
-*
-* This source code is licensed under the MIT license found in the
-* LICENSE file in the root directory of this source tree.
-*
-* @license ${packageLicense}
-*/`;
-
 export default defineConfig(() => {
   const plugins = [
     circularDependency({
@@ -39,6 +30,11 @@ export default defineConfig(() => {
     dts({
       rollupTypes: true,
       insertTypesEntry: true,
+    }),
+    prependEntryBannerPlugin({
+      packageLicense,
+      packageName,
+      packageVersion,
     }),
   ];
 
@@ -55,13 +51,6 @@ export default defineConfig(() => {
           if (format === "es") return `${packageFileBaseName}.mjs`;
           if (format === "umd") return `${packageFileBaseName}.umd.js`;
           return `${packageFileBaseName}.js`;
-        },
-      },
-      rollupOptions: {
-        output: {
-          banner: chunk => {
-            return chunk.isEntry ? banner : "";
-          },
         },
       },
     },

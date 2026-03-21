@@ -9,5 +9,12 @@
     }
   },
   "extends": "../tsconfig.json",
-  "include": ["src", "tests", "**.ts", "**.tsx", "package.json"]
+  "include": [
+    "src",
+    "tests",
+    "vite/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "package.json"
+  ]
 }

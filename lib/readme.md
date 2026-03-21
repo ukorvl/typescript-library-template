@@ -94,7 +94,7 @@
 </div>
 
 > [!NOTE]
-> **This repository is a template** Replace placeholders data (name, URLs, emails, owners, and publish settings) before your first public release.
+> **This repository is a template** Replace placeholder data (name, URLs, emails, owners, and publish settings) before your first public release.
 
 <h2 align="center">What you get with this template</h2>
 
@@ -150,9 +150,9 @@ In addition, the project uses pnpm workspaces to manage dependencies across mult
 There is also a GitHub action setup to run tests and build the library on every push to the main branch. This ensures that the code remains stable and functional. Additionally, it includes labels configuration and a basic issue template to help users report issues effectively.
 
 > [!NOTE]
-> Before running the publish workflow, configure your package as an **npm Trusted Publisher** for this repository/workflow. This enables **OIDC-based publishing from GitHub Actions** and removes the need for a long-lived `NPM_TOKEN`. See npm’s Trusted Publishers guide for setup steps. :contentReference[oaicite:0]{index=0}
+> Before running the publish workflow, configure your package as an **npm Trusted Publisher** for this repository/workflow. This enables **OIDC-based publishing from GitHub Actions** and removes the need for a long-lived `NPM_TOKEN`. [npm’s Trusted Publishers guide](https://docs.npmjs.com/trusted-publishers) for setup steps.
 >
-> If your package is **scoped** (for example `@your-scope/your-package`) and you are publishing it **publicly for the first time**, npm requires `npm publish --access public`. After the first successful public publish, later versions do not need that flag. See npm’s scoped package publishing docs. :contentReference[oaicite:1]{index=1}
+> If your package is **scoped** (for example `@your-scope/your-package`) and you are publishing it **publicly for the first time**, npm requires `npm publish --access public`. After the first successful public publish, later versions do not need that flag. See [npm’s scoped package publishing docs](https://docs.npmjs.com/creating-and-publishing-scoped-public-packages).
 
 <h2 align="center">License</h2>
 
