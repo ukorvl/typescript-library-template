@@ -1,8 +1,9 @@
 <div align="center">
   <h2 align="center">TypeScript Library Template</h2>
   <p>
-    This template is a modern foundation for building TypeScript ESM-only libraries with a setup that already reflects how serious packages are built today. It includes strong defaults for type safety, package validation, CI, release hygiene, and AI-assisted development, helping you avoid common setup mistakes and ship with more confidence. Whether you are building for Node.js, the browser, or both, it gives you a clean, future-facing base without overengineering the project from day one.
+    This template is a modern foundation for building TypeScript ESM-only libraries with a setup that reflects how serious packages are built today. It includes strong defaults for type safety, package validation, CI, release hygiene, and AI-assisted development, helping you avoid common setup mistakes and ship with more confidence. Whether you are building for Node.js, browser, or both, it gives you a clean, future-facing base without overengineering the project from day one.
   </p>
+  <br />
   <p align="center">
     <a href="https://shields.io/docs/static-badges">
       <picture>
@@ -80,6 +81,12 @@
     </picture>
   </a>
 </p>
+</div>
+
+> [!NOTE]
+> Fill this shields with real data before your first release, or remove them if you prefer to add them later. They are just placeholders to show how you can create beautiful static badges with icons and dark mode support.
+
+<div align="center">
   <img
     alt="Illustration of a TypeScript library template as a stack of hotcakes"
     src="https://raw.githubusercontent.com/ukorvl/design/master/typescript-library-template/typescript-hotcake.png"
@@ -94,7 +101,7 @@
 </div>
 
 > [!NOTE]
-> **This repository is a template** Replace placeholder data (name, URLs, emails, owners, and publish settings) before your first public release.
+> **This repository is a template:** Replace placeholder data (name, URLs, emails, owners, and publish settings) before your first public release.
 
 <h2 align="center">What you get with this template</h2>
 
@@ -134,15 +141,6 @@ pnpm run typecheck
 pnpm run test
 pnpm run build
 pnpm run verify:package
-```
-
-Workspace-specific commands:
-
-```sh
-pnpm -C docs run dev
-pnpm -C docs run build
-pnpm -C example run dev
-pnpm -C example run build
 ```
 
 In addition, the project uses pnpm workspaces to manage dependencies across multiple packages, allowing for efficient development and testing.
