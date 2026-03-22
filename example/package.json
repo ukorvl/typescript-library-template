@@ -19,7 +19,6 @@
     "typescript": "catalog:",
     "vite": "catalog:",
     "vite-plugin-circular-dependency": "catalog:",
-    "vite-tsconfig-paths": "catalog:",
     "vitest": "catalog:"
   }
 }
