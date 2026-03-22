@@ -25,6 +25,10 @@ jobs:
       - name: Install dependencies
         uses: ./.github/actions/install
 
+      - name: Bootstrap repository
+        run: pnpm run setup-repo
+        shell: bash
+
       - name: Lint
         uses: ./.github/actions/lint
         with:

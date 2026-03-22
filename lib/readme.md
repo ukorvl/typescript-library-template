@@ -136,6 +136,8 @@ pnpm install
 pnpm run setup-repo
 ```
 
+`pnpm install` intentionally installs dependencies and git hooks only. Use `pnpm run setup-repo` for explicit first-run bootstrap (builds `lib` for consumer workspaces).
+
 This template intentionally uses generic placeholder metadata and repository links. Update them to your organization values before publishing.
 
 <h2 align="center">Core commands</h2>

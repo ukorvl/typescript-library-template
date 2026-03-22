@@ -3,13 +3,13 @@
 ## Getting started
 
 1. Fork and clone the repository.
-2. Install dependencies:
+2. Install dependencies and set up local git hooks:
 
 ```sh
 pnpm install
 ```
 
-3. Build the library workspace once before running consumer workspaces:
+3. Run first-time bootstrap (explicit):
 
 ```sh
 pnpm run setup-repo
