@@ -22,7 +22,7 @@
     "lint:fix": "eslint --cache --fix --ext .ts,.tsx,.js,.jsx,.mjs,.cjs,.json .",
     "lint:md-links": "pnpm exec remark . --ext .md --frail --quiet && REMARK_MDX=1 pnpm exec remark . --ext .mdx --frail --quiet",
     "lint-staged": "lint-staged",
-    "prepare": "pnpm run install-git-hooks && pnpm run setup-repo",
+    "prepare": "pnpm run install-git-hooks",
     "setup-repo": "pnpm -C lib run build",
     "test": "pnpm -r --if-present run test",
     "typecheck": "pnpm -r --if-present run typecheck",

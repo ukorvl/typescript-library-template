@@ -1,5 +1,5 @@
 name: "Install dependencies"
-description: "Prepare repository and all dependencies"
+description: "Install repository dependencies"
 
 inputs:
   node-version:
