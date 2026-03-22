@@ -66,6 +66,8 @@ jobs:
       - name: Pack library tarball
         id: pack-lib
         uses: ./.github/actions/pack-lib
+        with:
+          artifacts-dir: artifacts
 
       - name: Upload and attest package artifacts
         uses: ./.github/actions/attest-artifacts
@@ -73,6 +75,10 @@ jobs:
           artifact-name: lib-package
           subject-path: ${{ steps.pack-lib.outputs.tarball-path }}
           enable-attestation: ${{ github.event_name != 'pull_request' || !github.event.pull_request.head.repo.fork }}
+
+      - name: Clean up
+        run: rm -rf artifacts
+        shell: bash
 
   typescript-readiness:
     name: TypeScript Readiness (${{ matrix.typescript-version }})

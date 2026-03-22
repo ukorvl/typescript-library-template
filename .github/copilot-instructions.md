@@ -10,6 +10,15 @@ This repository is a pnpm monorepo template for shipping a TypeScript library fr
 - Use named exports from `lib/src/index.ts`.
 - Do not change scripts/docs inconsistently. If command behavior changes, update docs in the same change.
 - Prefer workspace-aware paths and commands (`pnpm -C <workspace> ...`).
+- Prefer maintainable shell/workflow code over clever one-liners.
+
+## CI/Workflow Script Quality
+
+- Keep shell steps readable and reviewable; avoid dense inline `node -e`/`perl` one-liners when a clear `jq` or multiline shell block works.
+- Prefer deterministic artifact paths and outputs (for example parse `pnpm pack --json`) instead of filesystem glob guessing when possible.
+- When parsing command output, include explicit null/empty checks and clear error messages.
+- Reuse composite actions for repeated workflow logic to avoid drift between workflows.
+- Don't use insecure tag or branch references in actions; prefer local actions or exact commit references for external actions.
 
 ## Workspace Map
 

@@ -40,6 +40,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Pack library tarball
+        id: pack-lib
         uses: ./.github/actions/pack-lib
         with:
           artifacts-dir: artifacts
@@ -49,12 +50,17 @@ jobs:
           npm sbom --prefix lib --sbom-format cyclonedx --sbom-type library > artifacts/library.sbom.cdx.json
         shell: bash
 
-      - name: Attest tarball + SBOM
-        uses: actions/attest@59d89421af93a897026c735860bf21b6eb4f7b26 # v4.1.0
+      - name: Upload and attest package artifacts
+        uses: ./.github/actions/attest-artifacts
         with:
-          subject-path: artifacts/*.tgz
+          artifact-name: lib-package
+          subject-path: ${{ steps.pack-lib.outputs.tarball-path }}
           sbom-path: artifacts/library.sbom.cdx.json
 
-      - name: Publish to npm
-        run: npm publish --prefix lib
+      - name: Publish tarball to npm
+        run: npm publish "${{ steps.pack-lib.outputs.tarball-path }}" --provenance
+        shell: bash
+
+      - name: Clean up
+        run: rm -rf artifacts
         shell: bash
