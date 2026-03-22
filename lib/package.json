@@ -49,7 +49,6 @@
     "vite": "catalog:",
     "vite-plugin-circular-dependency": "catalog:",
     "vite-plugin-dts": "^4.5.4",
-    "vite-tsconfig-paths": "catalog:",
     "vitest": "catalog:"
   },
   "publishConfig": {

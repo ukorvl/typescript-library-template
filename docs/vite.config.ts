@@ -1,12 +1,13 @@
 import { defineConfig } from "vite";
 import circularDependency from "vite-plugin-circular-dependency";
-import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
+  resolve: {
+    tsconfigPaths: true,
+  },
   plugins: [
     circularDependency({
       circleImportThrowErr: true,
     }),
-    tsconfigPaths(),
   ],
 });

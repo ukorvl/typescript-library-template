@@ -4,7 +4,6 @@ import { fileURLToPath } from "node:url";
 import { defineConfig } from "vite";
 import circularDependency from "vite-plugin-circular-dependency";
 import dts from "vite-plugin-dts";
-import tsconfigPaths from "vite-tsconfig-paths";
 
 import packageJson from "./package.json" with { type: "json" };
 import { prependEntryBannerPlugin } from "./vite/plugins/prepend-entry-banner";
@@ -26,7 +25,6 @@ export default defineConfig(() => {
     circularDependency({
       circleImportThrowErr: true,
     }),
-    tsconfigPaths(),
     dts({
       rollupTypes: true,
       insertTypesEntry: true,
@@ -40,6 +38,9 @@ export default defineConfig(() => {
 
   return {
     plugins,
+    resolve: {
+      tsconfigPaths: true,
+    },
     build: {
       minify: true,
       sourcemap: true,
