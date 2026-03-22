@@ -84,7 +84,7 @@
 </div>
 
 > [!NOTE]
-> Fill this shields with real data before your first release, or remove them if you prefer to add them later. They are just placeholders to show how you can create beautiful static badges with icons and dark mode support.
+> Fill these shields with real data before your first release, or remove them if you prefer to add them later. They are just placeholders to show how you can create beautiful static badges with icons and dark mode support.
 
 <div align="center">
   <img
@@ -121,11 +121,17 @@
 
 <h2 align="center">Quick start</h2>
 
-To get started with this template, use GitHub's **"Use this template"** button to create a new repository based on this template. Then, clone your new repository and install the dependencies.
+**Prerequisites**
+
+- Node.js `>=20.19.0 <25`
+- pnpm `>=10.32.0`
+
+Use GitHub's **Use this template** button first, then clone your repository and bootstrap it:
 
 ```sh
-git clone your-new-repo
-cd your-new-repo
+REPO_URL="https://github.com/<owner>/<repo>.git"
+git clone "$REPO_URL"
+cd "$(basename "${REPO_URL%.git}")"
 pnpm install
 pnpm run setup-repo
 ```
@@ -143,14 +149,44 @@ pnpm run build
 pnpm run verify:package
 ```
 
-In addition, the project uses pnpm workspaces to manage dependencies across multiple packages, allowing for efficient development and testing.
-
-There is also a GitHub action setup to run tests and build the library on every push to the main branch. This ensures that the code remains stable and functional. Additionally, it includes labels configuration and a basic issue template to help users report issues effectively.
-
 > [!NOTE]
 > Before running the publish workflow, configure your package as an **npm Trusted Publisher** for this repository/workflow. This enables **OIDC-based publishing from GitHub Actions** and removes the need for a long-lived `NPM_TOKEN`. [npm’s Trusted Publishers guide](https://docs.npmjs.com/trusted-publishers) for setup steps.
 >
+> Trusted publishing requires **npm CLI `>=11.5.1`** and **Node.js `>=22.14.0`** in the publishing environment. The publish workflow in this template runs on Node `24`, which satisfies that requirement.
+>
 > If your package is **scoped** (for example `@your-scope/your-package`) and you are publishing it **publicly for the first time**, npm requires `npm publish --access public`. After the first successful public publish, later versions do not need that flag. See [npm’s scoped package publishing docs](https://docs.npmjs.com/creating-and-publishing-scoped-public-packages).
+
+<h2 align="center">First publish checklist</h2>
+
+- [ ] Update package metadata in `lib/package.json`: `name`, `description`, `author`, `homepage`, `bugs.url`, `repository.url`, and `repository.directory` (if your package is not in `lib/`).
+- [ ] Update root metadata in `package.json`: `name`, `description`, and `author`.
+- [ ] Replace template scope/name values in `lib/jsr.json` (for example `name` currently uses `@your-scope/...`).
+- [ ] Replace template placeholders in `lib/readme.md` (mirrored at root `readme.md`): badges, links, and branding text.
+- [ ] Configure npm Trusted Publisher for this repo/workflow (`.github/workflows/publish.yaml`).
+- [ ] Run release gates before your first publish:
+
+```sh
+pnpm run setup-repo
+pnpm run lint
+pnpm run typecheck
+pnpm run test
+pnpm run verify:package
+```
+
+<h2 align="center">Tooling Stack</h2>
+
+- **Vite 8** for fast builds and dev workflows across `lib/`, `docs/`, and `example/`.
+- **TypeScript (strict mode)** for strong type safety and predictable library APIs.
+- **Vitest + V8 coverage** for fast tests with built-in coverage reporting.
+- **ESLint 9 + TypeScript ESLint + security-focused plugins** to catch correctness and safety issues early.
+- **Prettier + JSON/package sorting plugins** for consistent formatting across code and config.
+- **Knip** to detect unused files, dependencies, and exports.
+- **AreTheTypesWrong (`attw`) + publint** to validate package exports and publish quality.
+- **size-limit** with CI reporting to keep bundle size changes visible in pull requests.
+- **Commit quality gates** with `commitlint`, `lint-staged`, and `simple-git-hooks`.
+- **Supply-chain aware release pipeline** with npm provenance, SBOM generation, and GitHub artifact attestations.
+
+...and other carefully selected tools for day-to-day DX and release reliability.
 
 <h2 align="center">License</h2>
 
