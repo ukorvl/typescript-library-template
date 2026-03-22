@@ -14,7 +14,7 @@ concurrency:
 jobs:
   build:
     name: Build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04 # pinned for determinism
     permissions:
       contents: read
     steps:
@@ -44,7 +44,7 @@ jobs:
   package-attest:
     name: Package and Attest lib Tarball
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04 # pinned for determinism
     permissions:
       contents: read
       attestations: write
@@ -82,7 +82,7 @@ jobs:
 
   typescript-readiness:
     name: TypeScript Readiness (${{ matrix.typescript-version }})
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04 # pinned for determinism
     permissions:
       contents: read
     strategy:
