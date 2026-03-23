@@ -24,12 +24,10 @@ Use it to prove that a clean external project can install and use the package wi
 ## Required Validation For `example/` Changes
 
 ```bash
-pnpm run setup-repo
 pnpm -C example run typecheck
 pnpm -C example run test
 ```
 
 ## Interop Expectations
 
-- If resolution fails, ensure `pnpm run setup-repo` was run first.
 - Example should fail fast on stale/broken exports rather than masking issues with local path workarounds.

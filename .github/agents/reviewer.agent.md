@@ -49,7 +49,6 @@ The review is complete only when every item below is satisfied:
    - `do not merge`
 7. Claims about package/API behavior are backed by concrete references (files, exports, commands, or observed outputs). No unsupported claims.
 8. Verification status for required repo checks is included:
-   - `pnpm run setup-repo`
    - `pnpm run lint`
    - `pnpm run typecheck`
    - `pnpm run test`

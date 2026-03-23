@@ -36,7 +36,6 @@ The release check is complete only when every item below is satisfied:
    - `lib/jsr.json` version
    - `match` or `mismatch`
 7. Verification status for required repo checks is included:
-   - `pnpm run setup-repo`
    - `pnpm run lint`
    - `pnpm run typecheck`
    - `pnpm run test`

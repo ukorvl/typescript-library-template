@@ -13,7 +13,6 @@ Review this repository as a publishable TypeScript library package.
 ## Steps
 
 1. Run:
-   - `pnpm run setup-repo`
    - `pnpm run verify:package`
    - `pnpm -C lib exec size-limit --json`
    - `pnpm run lint && pnpm run typecheck && pnpm run test`

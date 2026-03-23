@@ -133,17 +133,13 @@ REPO_URL="https://github.com/<owner>/<repo>.git"
 git clone "$REPO_URL"
 cd "$(basename "${REPO_URL%.git}")"
 pnpm install
-pnpm run setup-repo
 ```
-
-`pnpm install` intentionally installs dependencies and git hooks only. Use `pnpm run setup-repo` for explicit first-run bootstrap (builds `lib` for consumer workspaces).
 
 This template intentionally uses generic placeholder metadata and repository links. Update them to your organization values before publishing.
 
 <h2 align="center">Core commands</h2>
 
 ```sh
-pnpm run setup-repo
 pnpm run lint
 pnpm run typecheck
 pnpm run test
@@ -168,7 +164,6 @@ pnpm run verify:package
 - [ ] Run release gates before your first publish:
 
 ```sh
-pnpm run setup-repo
 pnpm run lint
 pnpm run typecheck
 pnpm run test

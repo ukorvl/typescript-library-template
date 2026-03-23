@@ -4,6 +4,6 @@ import { getDocumentationIntro } from "../src/content";
 
 describe("docs workspace smoke", () => {
   it("documents real setup flow", () => {
-    expect(getDocumentationIntro()).toContain("setup-repo");
+    expect(getDocumentationIntro()).toContain("prebuild lib automatically");
   });
 });

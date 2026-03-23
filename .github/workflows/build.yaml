@@ -27,10 +27,6 @@ jobs:
       - name: Install dependencies
         uses: ./.github/actions/install
 
-      - name: Bootstrap repository
-        run: pnpm run setup-repo
-        shell: bash
-
       - name: Lint
         uses: ./.github/actions/lint
         with:
@@ -105,13 +101,7 @@ jobs:
       - name: Install dependencies
         uses: ./.github/actions/install
 
-      - name: Bootstrap repository
-        run: pnpm run setup-repo
-        shell: bash
-
-      - name: Typecheck with TypeScript ${{ matrix.typescript-version }}
-        run: |
-          pnpm --package=typescript@${{ matrix.typescript-version }} dlx tsc --noEmit --project lib/tsconfig.json
-          pnpm --package=typescript@${{ matrix.typescript-version }} dlx tsc --noEmit --project docs/tsconfig.json
-          pnpm --package=typescript@${{ matrix.typescript-version }} dlx tsc --noEmit --project example/tsconfig.json
-        shell: bash
+      - name: TypeScript readiness check
+        uses: ./.github/actions/typescript-readiness
+        with:
+          typescript-version: ${{ matrix.typescript-version }}

@@ -7,7 +7,6 @@ Prepare a release candidate for the `lib/` package with packaging and CI integri
 1. Confirm versioning state:
    - `lib/package.json` and `lib/jsr.json` versions match.
 2. Build and validate package:
-   - `pnpm run setup-repo`
    - `pnpm run verify:package`
    - `pnpm -C lib exec size-limit --json`
 3. Validate repo gates:
