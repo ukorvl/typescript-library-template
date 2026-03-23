@@ -57,7 +57,6 @@ Changes should leave the template in a state where a new team can:
 
 ## Required Verification Commands
 
-- `pnpm run setup-repo`
 - `pnpm run lint`
 - `pnpm run typecheck`
 - `pnpm run test`

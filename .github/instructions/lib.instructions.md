@@ -26,7 +26,6 @@ Optimize for durable API design, predictable packaging, and low-friction upgrade
 Run these before finalizing:
 
 ```bash
-pnpm run setup-repo
 pnpm -C lib run build
 pnpm -C lib run typecheck
 pnpm -C lib run test

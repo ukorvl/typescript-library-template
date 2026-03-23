@@ -9,12 +9,6 @@
 pnpm install
 ```
 
-3. Run first-time bootstrap (explicit):
-
-```sh
-pnpm run setup-repo
-```
-
 ## Development commands
 
 ```sh

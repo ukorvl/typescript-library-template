@@ -21,7 +21,6 @@ Add a new public export to the library safely and update all related surfaces.
 
 Run:
 
-- `pnpm run setup-repo`
 - `pnpm -C lib run test`
 - `pnpm -C lib run typecheck`
 - `pnpm run verify:package`
