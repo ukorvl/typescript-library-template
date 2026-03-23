@@ -8,7 +8,8 @@
   "plugins": [
     "prettier-plugin-sort-json",
     "prettier-plugin-packagejson",
-    "prettier-plugin-multiline-arrays"
+    "prettier-plugin-multiline-arrays",
+    "prettier-plugin-sh"
   ],
   "printWidth": 90,
   "semi": true,
