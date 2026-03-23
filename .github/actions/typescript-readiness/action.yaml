@@ -1,5 +1,5 @@
 name: "TypeScript readiness"
-description: "Prebuilds lib output when needed and runs type checks with a target TypeScript version"
+description: "Runs TypeScript type checks in all workspaces with a target TypeScript version"
 
 inputs:
   typescript-version:
