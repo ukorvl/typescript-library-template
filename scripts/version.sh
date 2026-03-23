@@ -6,6 +6,7 @@
 set -euo pipefail
 
 SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
+# shellcheck disable=SC1091 # common.sh path is resolved dynamically from SCRIPT_DIR.
 source "$SCRIPT_DIR/common.sh"
 
 check_command jq

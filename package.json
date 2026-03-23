@@ -96,7 +96,8 @@
   },
   "knip": {
     "ignore": [
-      ".remarkrc.mjs"
+      ".remarkrc.mjs",
+      "scripts/prebuild-lib-if-needed.mjs"
     ],
     "ignoreBinaries": [
       "commitlint",
