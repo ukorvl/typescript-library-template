@@ -11,8 +11,7 @@ import { prependEntryBannerPlugin } from "./vite/plugins/prepend-entry-banner";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const packageName = packageJson.name;
-const packageNameParts: string[] = packageName.split("/");
-const packageFileBaseName = packageNameParts.at(-1) ?? packageName;
+const packageFileBaseName = packageName.split("/").at(-1) ?? packageName;
 const packageVersion = packageJson.version;
 const packageLicense = packageJson.license;
 

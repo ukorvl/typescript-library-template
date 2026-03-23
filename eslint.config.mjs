@@ -21,7 +21,8 @@ const allTsFiles = [...rootTsFiles, ...workspaceTsFiles, ...scriptsTsFiles];
 
 const rootJsFiles = ["*.{js,mjs,cjs}"];
 const workspaceJsFiles = ["{lib,docs,example}/**/*.{js,mjs,cjs,jsx}"];
-const allJsFiles = [...rootJsFiles, ...workspaceJsFiles];
+const scriptsJsFiles = ["scripts/**/*.{js,mjs,cjs}", "*/scripts/**/*.{js,mjs,cjs}"];
+const allJsFiles = [...rootJsFiles, ...workspaceJsFiles, ...scriptsJsFiles];
 
 const allCodeFiles = [...allTsFiles, ...allJsFiles];
 const allJsonFiles = ["**/*.json"];
@@ -193,7 +194,7 @@ export default [
       "unicorn/no-nested-ternary": "warn",
       "unicorn/no-null": "off",
       "unicorn/prefer-module": "warn",
-      "unicorn/prevent-abbreviations": "warn",
+      "unicorn/prevent-abbreviations": "off",
     },
   },
   {

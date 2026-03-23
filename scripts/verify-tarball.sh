@@ -11,7 +11,7 @@ check_command npm
 check_command node
 
 # Ensure packaged outputs exist when this script is invoked directly on a clean checkout.
-bash "$SCRIPT_DIR/prebuild-lib-if-needed.sh"
+node "$SCRIPT_DIR/prebuild-lib-if-needed.mjs"
 
 tmp_dir="$(mktemp -d)"
 cleanup() {
