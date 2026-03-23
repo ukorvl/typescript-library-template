@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
 source "$SCRIPT_DIR/common.sh"
 
 check_command jq
@@ -57,12 +57,12 @@ run_npm_clean() {
   "${cmd[@]}"
 }
 
-pushd "$consumer_dir" >/dev/null
+pushd "$consumer_dir" > /dev/null
 
-run_npm_clean init -y >/dev/null
-run_npm_clean install "$tarball_path" >/dev/null
+run_npm_clean init -y > /dev/null
+run_npm_clean install "$tarball_path" > /dev/null
 node --input-type=module -e "await import(process.argv[1]);" "$package_name"
 
-popd >/dev/null
+popd > /dev/null
 
 echo "Tarball smoke test passed for $package_name"

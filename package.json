@@ -13,8 +13,8 @@
   "scripts": {
     "build": "pnpm -C lib run build && pnpm -r --parallel --stream --filter ./docs --filter ./example run build",
     "dev": "node ./scripts/prebuild-lib-if-needed.mjs && pnpm -r --parallel --stream --filter ./lib --filter ./docs --filter ./example run dev",
-    "format": "prettier --check \"**/*.{js,ts,jsx,tsx,json,md,yaml,yml}\"",
-    "format:fix": "prettier --write \"**/*.{js,ts,jsx,tsx,json,md,yaml,yml}\"",
+    "format": "prettier --check \"**/*.{js,ts,jsx,tsx,json,md,yaml,yml,sh}\"",
+    "format:fix": "prettier --write \"**/*.{js,ts,jsx,tsx,json,md,yaml,yml,sh}\"",
     "install-git-hooks": "pnpm exec simple-git-hooks",
     "knip": "knip --cache --production",
     "lint": "node ./scripts/prebuild-lib-if-needed.mjs && eslint --cache --ext .ts,.tsx,.js,.jsx,.mjs,.cjs,.json .",
@@ -44,7 +44,8 @@
       "pnpm exec eslint --fix",
       "pnpm exec prettier --write"
     ],
-    "**/*.{md,yaml,yml}": "pnpm exec prettier --write"
+    "**/*.{md,yaml,yml}": "pnpm exec prettier --write",
+    "**/*.sh": "pnpm exec prettier --write"
   },
   "devDependencies": {
     "@commitlint/cli": "catalog:",
@@ -75,6 +76,7 @@
     "prettier": "catalog:",
     "prettier-plugin-multiline-arrays": "catalog:",
     "prettier-plugin-packagejson": "catalog:",
+    "prettier-plugin-sh": "catalog:",
     "prettier-plugin-sort-json": "catalog:",
     "remark-cli": "catalog:",
     "remark-mdx": "catalog:",
