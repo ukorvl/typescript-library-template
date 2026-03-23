@@ -1,7 +1,7 @@
 <div align="center">
   <h2 align="center">TypeScript Library Template</h2>
   <p>
-    This template is a modern foundation for building TypeScript ESM-only libraries with a setup that reflects how serious packages are built today. It includes strong defaults for type safety, package validation, CI, release hygiene, and AI-assisted development, helping you avoid common setup mistakes and ship with more confidence. Whether you are building for Node.js, browser, or both, it gives you a clean, future-facing base without overengineering the project from day one.
+    This template is a modern foundation for building TypeScript ESM-first libraries with a setup that reflects how serious packages are built today. It includes strong defaults for type safety, package validation, CI, release hygiene, and AI-assisted development, helping you avoid common setup mistakes and ship with more confidence. Whether you are building for Node.js, browser, or both, it gives you a clean, future-facing base without overengineering the project from day one.
   </p>
   <br />
   <p align="center">
@@ -49,8 +49,8 @@
 
   <a href="https://shields.io/docs/static-badges">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/module-ESM--only-1e2029?style=flat">
-      <img src="https://img.shields.io/badge/module-ESM--only-ffcc00?style=flat" alt="ESM Only">
+      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/module-ESM--first-1e2029?style=flat">
+      <img src="https://img.shields.io/badge/module-ESM--first-ffcc00?style=flat" alt="ESM-first">
     </picture>
   </a>
 

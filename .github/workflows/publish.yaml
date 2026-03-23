@@ -58,7 +58,7 @@ jobs:
           sbom-path: artifacts/library.sbom.cdx.json
 
       - name: Publish tarball to npm
-        run: npm publish "${{ steps.pack-lib.outputs.tarball-path }}" --provenance
+        run: npm publish "${{ steps.pack-lib.outputs.tarball-path }}" --provenance --access public
         shell: bash
 
       - name: Clean up
