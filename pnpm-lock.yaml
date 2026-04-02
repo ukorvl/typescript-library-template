@@ -13,8 +13,8 @@ catalogs:
       specifier: ^20.5.0
       version: 20.5.0
     '@commitlint/format':
-      specifier: ^20.0.0
-      version: 20.0.0
+      specifier: ^20.5.0
+      version: 20.5.0
     '@commitlint/types':
       specifier: ^20.5.0
       version: 20.5.0
@@ -148,7 +148,7 @@ importers:
         version: 20.5.0
       '@commitlint/format':
         specifier: 'catalog:'
-        version: 20.0.0
+        version: 20.5.0
       '@commitlint/types':
         specifier: 'catalog:'
         version: 20.5.0
@@ -418,8 +418,8 @@ packages:
     resolution: {integrity: sha512-kSJj34Rp10ItP+Eh9oCItiuN/HwGQMXBnIRk69jdOwEW9llW9FlyqcWYbHPSGofmjsqeoxa38UaEA5tsbm2JWw==}
     engines: {node: '>=v18'}
 
-  '@commitlint/format@20.0.0':
-    resolution: {integrity: sha512-zrZQXUcSDmQ4eGGrd+gFESiX0Rw+WFJk7nW4VFOmxub4mAATNKBQ4vNw5FgMCVehLUKG2OT2LjOqD0Hk8HvcRg==}
+  '@commitlint/format@20.5.0':
+    resolution: {integrity: sha512-TI9EwFU/qZWSK7a5qyXMpKPPv3qta7FO4tKW+Wt2al7sgMbLWTsAcDpX1cU8k16TRdsiiet9aOw0zpvRXNJu7Q==}
     engines: {node: '>=v18'}
 
   '@commitlint/is-ignored@19.8.1':
@@ -4430,10 +4430,10 @@ snapshots:
       '@commitlint/types': 19.8.1
       chalk: 5.4.1
 
-  '@commitlint/format@20.0.0':
+  '@commitlint/format@20.5.0':
     dependencies:
       '@commitlint/types': 20.5.0
-      chalk: 5.4.1
+      picocolors: 1.1.1
 
   '@commitlint/is-ignored@19.8.1':
     dependencies:
