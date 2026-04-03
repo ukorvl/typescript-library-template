@@ -137,16 +137,6 @@ pnpm install
 
 This template intentionally uses generic placeholder metadata and repository links. Update them to your organization values before publishing.
 
-<h2 align="center">Core commands</h2>
-
-```sh
-pnpm run lint
-pnpm run typecheck
-pnpm run test
-pnpm run build
-pnpm run verify:package
-```
-
 > [!NOTE]
 > Before running the publish workflow, configure your package as an **npm Trusted Publisher** for this repository/workflow. This enables **OIDC-based publishing from GitHub Actions** and removes the need for a long-lived `NPM_TOKEN`. [npm’s Trusted Publishers guide](https://docs.npmjs.com/trusted-publishers) for setup steps.
 >
