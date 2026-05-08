@@ -1,5 +1,7 @@
 name: Dependabot auto-merge
 
+# It is recommended to use this workflow in conjunction with branch protection rules that require status checks to pass and approvals before merging.
+
 on:
   pull_request:
     types:
@@ -8,14 +10,17 @@ on:
       - reopened
       - ready_for_review
 
-permissions:
-  contents: write
-  pull-requests: write
+permissions: {}
 
 jobs:
   dependabot-auto-merge:
-    if: github.event.pull_request.user.login == 'dependabot[bot]'
+    if: >
+      github.event.pull_request.user.login == 'dependabot[bot]' &&
+      github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
 
     steps:
       - name: Fetch Dependabot metadata
