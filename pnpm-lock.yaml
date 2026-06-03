@@ -103,8 +103,8 @@ catalogs:
       specifier: ^4.2.0
       version: 4.2.0
     publint:
-      specifier: ^0.3.15
-      version: 0.3.18
+      specifier: ^0.3.21
+      version: 0.3.21
     remark-cli:
       specifier: ^12.0.1
       version: 12.0.1
@@ -315,7 +315,7 @@ importers:
         version: 0.30.21
       publint:
         specifier: 'catalog:'
-        version: 0.3.18
+        version: 0.3.21
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -3635,8 +3635,8 @@ packages:
     resolution: {integrity: sha512-hjy5mWzHZhgRGh0f90f0Bz3VrGUe0T+AlhwnETakzRdvaN9RtPYLQG1+ZuEzSDK95FAhPYd26nEi1xVrXqvBwg==}
     engines: {node: '>=22'}
 
-  publint@0.3.18:
-    resolution: {integrity: sha512-JRJFeBTrfx4qLwEuGFPk+haJOJN97KnPuK01yj+4k/Wj5BgoOK5uNsivporiqBjk2JDaslg7qJOhGRnpltGeog==}
+  publint@0.3.21:
+    resolution: {integrity: sha512-OqejcnMV6E9zel2oCrUOJEiiFkGiAAni0A6ibfQNh1k9Gu5z4F+Yso8lllam7AzmV6Do0vp7u3UpZNRBwuXaHQ==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -7915,7 +7915,7 @@ snapshots:
       '@augment-vir/assert': 31.59.2
       '@augment-vir/common': 31.59.2
 
-  publint@0.3.18:
+  publint@0.3.21:
     dependencies:
       '@publint/pack': 0.1.4
       package-manager-detector: 1.6.0
