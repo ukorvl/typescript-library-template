@@ -33,6 +33,11 @@ runs:
         severity: "error"
         version: v0.11.0
 
+    - name: Validate workflows and actions
+      uses: mpalmer/action-validator@c994f427b7c42cd5ecb1bc9315cb91c3d7d72e3d # v0.9.0
+      with:
+        version: 0.9.0
+
     - name: Validate markdown links
       run: pnpm run lint:md-links
       shell: bash
