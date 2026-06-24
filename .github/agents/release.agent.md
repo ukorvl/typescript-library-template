@@ -142,7 +142,7 @@ List the five required repo checks and mark each as `pass`, `fail`, or `not run`
 
 ## Version consistency
 
-Report versions from `lib/package.json` and `lib/jsr.json`, then state `match` or `mismatch`.
+Report versions from `lib/package.json`, `lib/jsr.json`, and `.release-please-manifest.json["lib"]`, then state `match` or `mismatch`.
 
 ## Publish gate
 

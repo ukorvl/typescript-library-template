@@ -5,7 +5,7 @@ Prepare a release candidate for the `lib/` package with packaging and CI integri
 ## Checklist
 
 1. Confirm versioning state:
-   - `lib/package.json` and `lib/jsr.json` versions match.
+   - `lib/package.json`, `lib/jsr.json`, and `.release-please-manifest.json["lib"]` versions match.
 2. Build and validate package:
    - `pnpm run verify:package`
    - `pnpm -C lib exec size-limit --json`

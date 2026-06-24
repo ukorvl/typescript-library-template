@@ -1,6 +1,5 @@
 {
   "name": "typescript-library-template-monorepo",
-  "version": "0.0.1",
   "private": true,
   "description": "Template monorepo for building and publishing a TypeScript library",
   "license": "MIT",
@@ -12,21 +11,20 @@
   },
   "scripts": {
     "build": "pnpm -C lib run build && pnpm -r --parallel --stream --filter ./docs --filter ./example run build",
-    "dev": "node ./scripts/prebuild-lib-if-needed.mjs && pnpm -r --parallel --stream --filter ./lib --filter ./docs --filter ./example run dev",
+    "dev": "node ./lib/scripts/prebuild-lib-if-needed.mjs && pnpm -r --parallel --stream --filter ./lib --filter ./docs --filter ./example run dev",
     "format": "prettier --check \"**/*.{js,ts,jsx,tsx,json,md,yaml,yml,sh}\"",
     "format:fix": "prettier --write \"**/*.{js,ts,jsx,tsx,json,md,yaml,yml,sh}\"",
     "install-git-hooks": "pnpm exec simple-git-hooks",
     "knip": "knip --cache --production",
-    "lint": "node ./scripts/prebuild-lib-if-needed.mjs && eslint --cache --ext .ts,.tsx,.js,.jsx,.mjs,.cjs,.json .",
+    "lint": "node ./lib/scripts/prebuild-lib-if-needed.mjs && eslint --cache --ext .ts,.tsx,.js,.jsx,.mjs,.cjs,.json .",
     "lint:commits": "bash -c \"if git rev-parse --verify HEAD~1 >/dev/null 2>&1; then pnpm exec commitlint --from=HEAD~1 --to=HEAD; else pnpm exec commitlint --last; fi\"",
-    "lint:fix": "node ./scripts/prebuild-lib-if-needed.mjs && eslint --cache --fix --ext .ts,.tsx,.js,.jsx,.mjs,.cjs,.json .",
+    "lint:fix": "node ./lib/scripts/prebuild-lib-if-needed.mjs && eslint --cache --fix --ext .ts,.tsx,.js,.jsx,.mjs,.cjs,.json .",
     "lint:md-links": "pnpm exec remark . --ext .md --frail --quiet && REMARK_MDX=1 pnpm exec remark . --ext .mdx --frail --quiet",
     "lint-staged": "lint-staged",
-    "prepare": "pnpm run install-git-hooks && node ./scripts/prebuild-lib-if-needed.mjs",
-    "test": "node ./scripts/prebuild-lib-if-needed.mjs && pnpm -r --if-present run test",
-    "typecheck": "node ./scripts/prebuild-lib-if-needed.mjs && pnpm -r --if-present run typecheck",
-    "verify:package": "pnpm -C lib run verify:package",
-    "version": "bash ./scripts/version.sh"
+    "prepare": "pnpm run install-git-hooks && node ./lib/scripts/prebuild-lib-if-needed.mjs",
+    "test": "node ./lib/scripts/prebuild-lib-if-needed.mjs && pnpm -r --if-present run test",
+    "typecheck": "node ./lib/scripts/prebuild-lib-if-needed.mjs && pnpm -r --if-present run typecheck",
+    "verify:package": "pnpm -C lib run verify:package"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm run lint-staged",
@@ -57,6 +55,7 @@
     "@types/node": "catalog:",
     "@vitest/coverage-v8": "catalog:",
     "eslint": "catalog:",
+    "eslint-config-flat-gitignore": "catalog:",
     "eslint-import-resolver-typescript": "catalog:",
     "eslint-plugin-import": "catalog:",
     "eslint-plugin-jsdoc": "catalog:",
@@ -97,7 +96,7 @@
   "knip": {
     "ignore": [
       ".remarkrc.mjs",
-      "scripts/prebuild-lib-if-needed.mjs"
+      "lib/scripts/prebuild-lib-if-needed.mjs"
     ],
     "ignoreBinaries": [
       "commitlint",

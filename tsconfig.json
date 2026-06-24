@@ -22,9 +22,7 @@
     "**/build/**",
     "**/coverage/**",
     "eslint.config.mjs",
-    "scripts/**/*.js",
-    "scripts/**/*.mjs",
-    "scripts/**/*.cjs"
+    "**/scripts/**"
   ],
   "references": [
     { "path": "lib" },
