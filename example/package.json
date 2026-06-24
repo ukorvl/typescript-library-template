@@ -1,6 +1,5 @@
 {
   "name": "typescript-library-template-example",
-  "version": "0.0.1",
   "private": true,
   "description": "Example workspace for the TypeScript library template",
   "license": "MIT",

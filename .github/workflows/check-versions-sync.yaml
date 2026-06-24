@@ -1,6 +1,6 @@
 name: Check Versions in Sync
 
-# This workflow ensures that the versions in package.json, jsr.json, and version.ts are in sync.
+# This workflow ensures that the versions in lib/package.json, lib/jsr.json, and .release-please-manifest.json stay in sync.
 
 on:
   pull_request:
@@ -25,3 +25,5 @@ jobs:
         with:
           PACKAGE_JSON: lib/package.json
           JSR_JSON: lib/jsr.json
+          MANIFEST_JSON: .release-please-manifest.json
+          MANIFEST_COMPONENT: lib

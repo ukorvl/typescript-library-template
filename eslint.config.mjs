@@ -1,4 +1,5 @@
 import js from "@eslint/js";
+import gitignore from "eslint-config-flat-gitignore";
 import pluginImport from "eslint-plugin-import";
 import jsdoc from "eslint-plugin-jsdoc";
 import noSecrets from "eslint-plugin-no-secrets";
@@ -49,15 +50,9 @@ const importResolverProjects = [
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
+  gitignore({ root: true, recursive: true }),
   {
-    ignores: [
-      "**/node_modules/**",
-      "**/dist/**",
-      "**/coverage/**",
-      "**/build/**",
-      "**/.astro/**",
-      "*.tgz",
-    ],
+    ignores: ["**/.astro/**"],
   },
   {
     files: allJsonFiles,

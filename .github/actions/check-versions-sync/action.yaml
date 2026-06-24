@@ -1,5 +1,5 @@
 name: "Check versions in sync"
-description: "Checks that the version in package.json matches the version in jsr.json"
+description: "Checks that the release version in package.json, jsr.json, and .release-please-manifest.json matches"
 
 inputs:
   PACKAGE_JSON:
@@ -10,26 +10,23 @@ inputs:
     description: "Path to the jsr.json file"
     required: true
     default: "lib/jsr.json"
+  MANIFEST_JSON:
+    description: "Path to the .release-please-manifest.json file"
+    required: true
+    default: ".release-please-manifest.json"
+  MANIFEST_COMPONENT:
+    description: "Manifest component key to compare against"
+    required: true
+    default: "lib"
 
 runs:
   using: "composite"
   steps:
-    - name: Get package.json version
+    - name: Check versions in sync
       shell: bash
-      run: |
-        PKG_VERSION=$(jq -r '.version' -- "${INPUTS_PACKAGE_JSON}")
-        echo "PKG_VERSION=$PKG_VERSION" >> $GITHUB_ENV
+      run: bash ./.github/scripts/check-versions-sync.sh
       env:
         INPUTS_PACKAGE_JSON: ${{ inputs.PACKAGE_JSON }}
-
-    - name: Check jsr.json version
-      shell: bash
-      run: |
-        JS_VERSION=$(jq -r '.version' -- "${INPUTS_JSR_JSON}")
-        if [[ "$JS_VERSION" != "$PKG_VERSION" ]]; then
-          echo "Error: jsr.json version ($JS_VERSION) does not match package.json version ($PKG_VERSION)"
-          exit 1
-        fi
-        echo "jsr.json version ($JS_VERSION) matches package.json version ($PKG_VERSION)."
-      env:
         INPUTS_JSR_JSON: ${{ inputs.JSR_JSON }}
+        INPUTS_MANIFEST_COMPONENT: ${{ inputs.MANIFEST_COMPONENT }}
+        INPUTS_MANIFEST_JSON: ${{ inputs.MANIFEST_JSON }}
