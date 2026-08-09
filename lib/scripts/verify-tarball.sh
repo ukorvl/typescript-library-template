@@ -3,8 +3,17 @@
 set -euo pipefail
 
 SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
-# shellcheck disable=SC1091 # common.sh path is resolved dynamically from SCRIPT_DIR.
-source "$SCRIPT_DIR/common.sh"
+LIB_DIR=$(cd -- "$SCRIPT_DIR/.." &> /dev/null && pwd)
+LIB_PACKAGE_JSON="$LIB_DIR/package.json"
+
+check_command() {
+  echo "Checking if command '$1' is available..."
+
+  if ! command -v "$1" > /dev/null 2>&1; then
+    echo "Error: Required command '$1' is not installed or not in PATH." >&2
+    exit 1
+  fi
+}
 
 check_command jq
 check_command pnpm
@@ -21,7 +30,7 @@ cleanup() {
 trap cleanup EXIT
 
 tarball_path="$(
-  pnpm -C "$REPO_ROOT/$LIB_PATH" pack --pack-destination "$tmp_dir" --json \
+  pnpm -C "$LIB_DIR" pack --pack-destination "$tmp_dir" --json \
     | jq -r 'if type == "array" then .[0].filename else .filename end'
 )"
 

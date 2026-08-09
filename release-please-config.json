@@ -1,0 +1,19 @@
+{
+  "packages": {
+    "lib": {
+      "bump-minor-pre-major": true,
+      "changelog-path": "CHANGELOG.md",
+      "extra-files": [
+        {
+          "jsonpath": "$.version",
+          "path": "jsr.json",
+          "type": "json"
+        }
+      ],
+      "include-component-in-tag": false,
+      "include-v-in-tag": true,
+      "release-type": "node"
+    }
+  },
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
+}
