@@ -29,6 +29,8 @@ updates:
     cooldown:
       default-days: 7
     ignore:
+      - dependency-name: "github/codeql-action/init"
+      - dependency-name: "github/codeql-action/analyze"
       - dependency-name: "*"
         update-types:
           - "version-update:semver-major"
