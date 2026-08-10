@@ -1,0 +1,55 @@
+name: "Publish lib"
+description: "Validate, package, attest, and publish the lib workspace to npm and JSR"
+
+inputs:
+  artifacts-dir:
+    description: "Directory where tarball artifacts should be written"
+    required: false
+    default: "artifacts"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Pack library tarball
+      id: pack-lib
+      uses: ./.github/actions/pack-lib
+      with:
+        artifacts-dir: ${{ inputs.artifacts-dir }}
+
+    - name: Generate SBOM
+      shell: bash
+      run: |
+        mkdir -p "${INPUTS_ARTIFACTS_DIR}"
+        npm sbom --prefix lib --sbom-format cyclonedx --sbom-type library > "${INPUTS_ARTIFACTS_DIR}/library.sbom.cdx.json"
+      env:
+        INPUTS_ARTIFACTS_DIR: ${{ inputs.artifacts-dir }}
+
+    - name: Dry run npm publish
+      run: npm publish "${{ steps.pack-lib.outputs.tarball-path }}" --access public --dry-run
+      shell: bash
+
+    - name: Dry run JSR publish
+      run: pnpm -C lib run publish:jsr --dry-run
+      shell: bash
+
+    - name: Upload and attest package artifacts
+      uses: ./.github/actions/attest-artifacts
+      with:
+        artifact-name: lib-package
+        sbom-path: ${{ inputs.artifacts-dir }}/library.sbom.cdx.json
+        subject-path: ${{ steps.pack-lib.outputs.tarball-path }}
+
+    - name: Publish tarball to npm
+      run: npm publish "${{ steps.pack-lib.outputs.tarball-path }}" --provenance --access public
+      shell: bash
+
+    - name: Publish package to JSR
+      run: pnpm -C lib run publish:jsr
+      shell: bash
+
+    - name: Clean up
+      if: ${{ always() }}
+      shell: bash
+      run: rm -rf "${INPUTS_ARTIFACTS_DIR}"
+      env:
+        INPUTS_ARTIFACTS_DIR: ${{ inputs.artifacts-dir }}

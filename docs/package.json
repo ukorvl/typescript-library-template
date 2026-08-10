@@ -1,6 +1,5 @@
 {
   "name": "typescript-library-template-docs",
-  "version": "0.0.1",
   "private": true,
   "description": "Documentation workspace for the TypeScript library template",
   "license": "MIT",

@@ -140,9 +140,11 @@ This template intentionally uses generic placeholder metadata and repository lin
 > [!NOTE]
 > Before running the publish workflow, configure your package as an **npm Trusted Publisher** for this repository/workflow. This enables **OIDC-based publishing from GitHub Actions** and removes the need for a long-lived `NPM_TOKEN`. [npm’s Trusted Publishers guide](https://docs.npmjs.com/trusted-publishers) for setup steps.
 >
-> Trusted publishing requires **npm CLI `>=11.5.1`** and **Node.js `>=22.14.0`** in the publishing environment. The publish workflow in this template runs on Node `24`, which satisfies that requirement.
+> Trusted publishing requires **npm CLI `>=11.5.1`** and **Node.js `>=22.14.0`** in the publishing environment.
 >
-> If your package is **scoped** (for example `@your-scope/your-package`) and you are publishing it **publicly for the first time**, npm requires `npm publish --access public`. After the first successful public publish, later versions do not need that flag. See [npm’s scoped package publishing docs](https://docs.npmjs.com/creating-and-publishing-scoped-public-packages).
+> If your package is **scoped** (for example `@your-scope/your-package`) and you are publishing it **publicly for the first time**, npm requires `npm publish --access public`. See [npm’s scoped package publishing docs](https://docs.npmjs.com/creating-and-publishing-scoped-public-packages).
+>
+> To publish to **JSR** from GitHub Actions, link the JSR package to this GitHub repository in the package settings on `jsr.io`. The publish workflow uses GitHub Actions OIDC with `id-token: write`, so no long-lived JSR token is required.
 
 <h2 align="center">First publish checklist</h2>
 
@@ -151,6 +153,7 @@ This template intentionally uses generic placeholder metadata and repository lin
 - [ ] Replace template scope/name values in `lib/jsr.json` (for example `name` currently uses `@your-scope/...`).
 - [ ] Replace template placeholders in `lib/readme.md` (mirrored at root `readme.md`): badges, links, and branding text.
 - [ ] Configure npm Trusted Publisher for this repo/workflow (`.github/workflows/publish.yaml`).
+- [ ] Link the JSR package to this GitHub repository in JSR package settings so GitHub Actions OIDC publishing is enabled.
 - [ ] Run release gates before your first publish:
 
 ```sh
@@ -171,7 +174,8 @@ pnpm run verify:package
 - **AreTheTypesWrong (`attw`) + publint** to validate package exports and publish quality.
 - **size-limit** with CI reporting to keep bundle size changes visible in pull requests.
 - **Commit quality gates** with `commitlint`, `lint-staged`, and `simple-git-hooks`.
-- **Supply-chain aware release pipeline** with npm provenance, SBOM generation, and GitHub artifact attestations.
+- **Release automation** with `release-please` and GitHub Actions workflows for npm and JSR publishing.
+- **Supply-chain aware release pipeline** with `release-please`, npm provenance, JSR publishing, SBOM generation, and GitHub artifact attestations.
 
 ...and other carefully selected tools for day-to-day DX and release reliability.
 
